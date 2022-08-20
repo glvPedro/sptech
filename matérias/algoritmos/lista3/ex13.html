@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+</head>
+
+<body style="text-align: center;">
+
+</body>
+    <input id="ipt_salario" placeholder="seu salário bruto">
+    <button onclick="inss()">calcular INSS</button>
+    <button onclick="ir()"> calcular IR</button>
+    <button onclick="sindical()"> calcular SINDICAL</button>
+</html>
+<script>
+    function inss() {
+        alert(`Apesar de seu bruto ser R$${ipt_salario.value}, após os descontos, você receberá somente R$${Number(ipt_salario.value) * 0.1}`)
+    }
+
+    function ir() {
+        alert(`Apesar de seu bruto ser R$${ipt_salario.value}, após os descontos, você receberá somente R$${Number(ipt_salario.value) * 0.2}`)
+    }
+
+    function sindical() {
+        alert(`Apesar de seu bruto ser R$${ipt_salario.value}, após os descontos, você receberá somente R$${Number(ipt_salario.value) / 30}`)
+    }
+</script>

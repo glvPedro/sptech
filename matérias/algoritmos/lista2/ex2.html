@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+<body style="text-align:center; background-color: aquamarine; margin-top: 30px;">
+    registro de frutas:
+    <br><br>
+    <input id="ipt_fruta" placeholder="insíra uma fruta">
+    <input id="ipt_preco" placeholder="insíra o valor dela">
+    <button onclick="registrar()">registrar</button>
+</body>
+</html>
+
+<script>
+    function registrar() {
+       alert(`a fruta: ${ipt_fruta.value} custa: ${ipt_preco.value}`)
+    }
+</script>

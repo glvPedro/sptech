@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+</head>
+
+<body style="text-align: center; background-color: aquamarine; margin-top: 30px;">
+    <input id="ipt_sabor" placeholder="sabor pizza a pedir">
+    <input id="ipt_preco" placeholder="valor da pizza">
+    <input id="ipt_prazo" placeholder="prazo em minutos">
+    <button onclick="registrar()">pedir pizza!</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function registrar() {
+        div_text.innerHTML= `a pizza de <b>${ipt_sabor.value}</b>, que custou <b>R$${ipt_preco.value}</b> chegará em <b>${ipt_prazo.value}</b> minutos`
+    }
+</script>

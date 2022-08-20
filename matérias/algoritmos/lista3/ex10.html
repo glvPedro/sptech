@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_torn1" placeholder="gasto torneira1">
+    <input id="ipt_torn2" placeholder="gasto torneira2">
+    <input id="ipt_torn3" placeholder="gasto torneira3">
+    <button onclick="calcular()">calcular desperdício</button>
+</body>
+
+</html>
+<script>
+function calcular() {
+    alert(`Suas 3 torneiras, juntas, desperdiçaram ${Number(ipt_torn1.value * 15) + Number(ipt_torn2.value * 15) + Number(ipt_torn3.value * 15)} litros de água`)
+}
+</script>

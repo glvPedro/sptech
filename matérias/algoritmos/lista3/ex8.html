@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_cont" placeholder="nota continuada">
+    <input id="ipt_sem" placeholder="nota semestral">
+    <input id="ipt_nome" placeholder="seu nome">
+    <button onclick="calcular()">calcular média</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        div_text.innerHTML= `A média do(a): ${ipt_nome.value} será de ${Number(ipt_cont.value * 0.4) + Number(ipt_sem.value * 0.6) / 2}"`
+    }
+</script>

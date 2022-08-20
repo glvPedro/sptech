@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body style="text-align: center; margin-top: 30px; background-color: aquamarine;">
+    <input id="ipt_linha" placeholder="linha utilizada?">
+    <input id="ipt_tempo" placeholder="tempo de deslocamento?">
+    <button onclick="registrar()">registar viagem</button>
+</body>
+
+</html>
+<script>
+    function registrar() {
+        alert('registrando sua linha de ônibus')
+        alert('registrando o tempo de viagem')
+        alert(`sua linha é: ${ipt_linha.value} e seu tempo de deslocamento é de: ${ipt_tempo.value}`)
+    }
+</script>

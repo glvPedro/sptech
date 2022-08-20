@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_valor" placeholder="valor da passagem">
+    <input id="ipt_viagens" placeholder="viagens por mês">
+    <button onclick="calcular()">ver economia</button>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        alert(`Você economizará R$${Number(ipt_valor.value / 2) * Number(ipt_viagens.value)} por mês`)
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_sabor" placeholder="sabor da pizza">
+    <input id="ipt_preco" placeholder="preço da pizza">
+    <input id="ipt_amigos" placeholder="qtd de amigos">
+    <button onclick="registrar()">pedir pizza</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function registrar() {
+        div_text.innerHTML= `A pizza de ${ipt_sabor.value} custa R$${ipt_preco.value} e cada amigo vai pagar R$${Number(ipt_preco.value) / Number(ipt_amigos.value)}`
+    }
+</script>

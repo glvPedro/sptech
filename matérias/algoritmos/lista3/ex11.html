@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_comum" placeholder="valor ingresso comum">
+    <input id="ipt_estud" placeholder="valor ingresso estudante">
+    <input id="ipt_valor" placeholder="valor ingresso ">
+    <button onclick="calcular()">calcular arrecadação</button>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        alert(`A arrecadação foi de R$${Number(ipt_comum.value) * Number(ipt_valor.value) + Number(ipt_estud.value) * Number(ipt_valor.value) / 2}`)
+    }
+</script>
