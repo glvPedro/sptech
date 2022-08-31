@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex</title>
+</head>
+
+<body>
+    <input id="ipt_familia" placeholder="qtd familiates">
+    <button onclick="calcular()">analisar familia</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var familiares = Number(ipt_familia.value);
+
+        if (familiares == 0) {
+            div_text.innerHTML = 'você tem tudo😊 <br>'
+        }
+        
+        if (familiares == 1) {
+            div_text.innerHTML = 'não tem TV <br> '
+        }
+
+        if (familiares == 2) {
+            div_text.innerHTML = 'não tem TV <br> não tem internet <br>'
+        }
+
+        if (familiares == 3) {
+            div_text.innerHTML = 'não tem TV <br> não tem internet <br> Não tem video game <br>'
+        }
+
+        if (familiares == 4) {
+            div_text.innerHTML = 'não tem TV <br> não tem internet <br> Não tem video game <br> Não tem Netflix <br>'
+        }
+    }
+</script>

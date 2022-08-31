@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_serie" placeholder="última série assitida">
+    <input id="ipt_episodio" placeholder="qtd episódios assistidos">
+    <button onclick="calcular()">verificar nível</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var ep = Number(ipt_episodio.value) * 22;
+
+        div_text.innerHTML= `Vejo que você gosta da série ${ipt_serie.value}`;
+
+        if (ep > 1800) {
+            div_text.innerHTML= `Vejo que você gosta da série ${ipt_serie.value} <br>`;
+            div_text.innerHTML= 'Uau, você realmente gosta dessa série!'
+        }
+    }
+</script>

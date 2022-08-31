@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_temp_ambiente" placeholder="temp do ambiente">
+    <button onclick="verificar()">verificar clima</button>
+    <br><br>
+    <div>
+        <img style="display: none; width: 200px; height: 200px;" id="id_img" src="" alt="">
+    </div>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var ambiente = Number(ipt_temp_ambiente.value);
+
+        if (ambiente < 10) {
+            id_img.style.display= 'block'
+            id_img.src = 'https://www.portalcorreiodoagreste.com.br/uploads/images/2019/01/estabelecimentos-vendem-alimentos-estragados-causando-revolta-da-populacao.jpg'
+        }
+
+        else {
+            id_img.style.display= 'block'
+            id_img.src = 'https://www.hipolabor.com.br/blog/wp-content/uploads/2017/06/93752-8-alimentos-nutritivos-que-ajudam-a-manter-o-bom-funcionamento-do-organismo.jpg'
+        }
+    }
+</script>

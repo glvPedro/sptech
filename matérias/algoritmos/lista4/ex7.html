@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_saldo" placeholder="saldo da conta">
+    <input id="ipt_retirada" placeholder="valor de retirada">
+    <button onclick="analisar()">analisar conta</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var saldo_atual = Number(ipt_saldo.value) - Number(ipt_retirada.value);
+        div_text.innerHTML = `o saldo atual da conta corrente é ${saldo_atual}`
+
+        if (saldo_atual < 0) {
+            div_text.innerHTML = `<b style="color: red;"> o saldo atual da conta corrente é ${saldo_atual} </b>`
+        }
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_homem" placeholder="qtd homens no elevador">
+    <input id="ipt_mulher" placeholder="qtd mulheres no elevador">
+    <button onclick="analisar()">analisar peso</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var peso_homem = Number(ipt_homem.value) * 80;
+        var peso_mulher = Number(ipt_mulher.value) * 60;
+        var peso_medio = (peso_homem + peso_mulher)
+
+        div_text.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${peso_medio}`
+    
+        if (peso_medio > 800 && peso_medio < 1000) {
+            div_text.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${peso_medio} <br>`
+            div_text.innerHTML += '<span style="color: blue;">Será necessário descer alguém para que o elevador se movimente </span>' 
+        }
+
+        if (peso_medio >= 1000) {
+            div_text.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${peso_medio} <br>`
+            div_text.innerHTML += '<span style="color: red;">Será necessário descer alguém para que o elevador se movimente </span>' 
+        }
+    }
+</script>

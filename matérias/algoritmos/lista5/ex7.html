@@ -1,0 +1,102 @@
+<!-- primeiro exercício escolhido da lista 'if' -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_idade" placeholder="entre com a sua idade">
+    <button onclick="executar()">ir pra festa</button>
+</body>
+
+</html>
+
+<script>
+    function executar() {
+        if (ipt_idade.value < 18) {
+            alert('Pedir permissão pro responsável')
+        }
+
+        else {
+            alert('#partiuFesta')
+        }
+    }
+</script>
+
+<!-- segundo exercício escolhido da lista 'if' -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_qtd" placeholder="qtd refris por dia">
+    <button onclick="calcular()">quantos refris?</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var calculo = Number(ipt_qtd.value) * 365;
+
+        if (calculo >= 500) {
+            div_text.innerHTML = `${calculo} <br>`
+            div_text.innerHTML += `cuidado com a diabetes!`
+        }
+
+        else {
+            div_text.innerHTML = `${calculo} <br>`
+        }
+    }
+</script>
+
+<!-- terceiro exercício escolhido da lista 'if' -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_nota1" placeholder="entre com a nota1">
+    <input id="ipt_nota2" placeholder="entre com a nota2">
+    <button onclick="verificar()">verificar situação</button>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var media = Number(ipt_nota1.value) + Number(ipt_nota2.value) / 2;
+
+        if (media >= 6) {
+            alert('parabéns, aprovado!')
+        }
+
+        else {
+            alert('tente novamente...')
+        }
+
+    }
+</script>

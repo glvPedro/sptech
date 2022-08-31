@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_frequencia" placeholder="entre com a sua frenquência">
+    <button onclick="analisar()">analisar frequência</button>
+    <br><br>
+    <div>
+        <img style="height: 200px; width: 200px; display: none;"  id="id_img" src="" alt="">
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var freq = Number(ipt_frequencia.value);
+
+        if (freq <50) {
+            id_img.style.display= 'block'
+            id_img.src= 'https://s.calendarr.com/upload/datas/di/at/dia-turista_c.jpg?auto_optimize=low&width=640'
+        }
+
+        else{
+            id_img.style.display= 'block'
+            id_img.src= 'https://gartic.com.br/imgs/mural/fa/fabiodiasfdl/estudioso.png'
+        }
+    }
+</script>
