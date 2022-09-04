@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body>
+    <input id="ipt_nome" placeholder="entre com seu nome">
+    <input id="ipt_modelo" placeholder="modelo a comprar">
+    <input id="ipt_valor" placeholder="valor do carro">
+    <input id="ipt_cupom" placeholder="entre com um cupom">
+    <button onclick="analisar()">efetuar compra</button>
+    <br><br>
+    <dvi id="div_text">
+
+    </dvi>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var cupom = Number(ipt_valor.value) * 0.11;
+
+        if (ipt_modelo.value == "") {
+            alert("Informe o modelo do carro para prosseguir com a compra!")
+            div_text.innerHTML = ''
+        }
+
+        if (ipt_valor.value < 5000) {
+            alert("Valor inválido! O carro está barato demais")
+            div_text.innerHTML = ''
+        }
+
+        if (ipt_cupom.value == "CARRO_NOVO") {
+            alert("Cupom válido! Desconto de 11% aplicado!")
+            div_text.innerHTML = `<span style="color: greenyellow;"><i> Olá, ${ipt_nome.value}! O carro de modelo ${ipt_modelo.value}, de valor padrão R$${ipt_valor.value}, sairá por R$${cupom} </i></span>`
+        }
+
+        else {
+            alert("Cupom inválido! Desconto não será aplicado!")
+            div_text.innerHTML = `<span style="color: red;"><b> Olá, ${ipt_nome.value}! O carro de modelo ${ipt_modelo.value}, de valor padrão R$${ipt_valor.value}, sairá por R$${ipt_valor.value} </b></span>`
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_valor" placeholder="valor a vista">
+    <input id="ipt_juros" placeholder="taxa de juros ao mês">
+    <input id="ipt_parcelas" placeholder="quantidade de parcelas">
+    <button onclick="calcular()">calcular prejú</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var valor = Number(ipt_valor.value);
+        var juros = Number(ipt_juros.value) / 100 + 1;
+        var parcelas = Number(ipt_parcelas.value);
+
+        var totalapagar = ((valor / parcelas) * juros) * parcelas;
+        var descontoavista = (valor * 0.80);
+        var carrosapagar = (totalapagar / valor);
+
+        div_text.innerHTML = `Seu carro vai sair por um total de R$${totalapagar.toFixed(2)}. Após 1 mês, ele já vai valer só R$${descontoavista.toFixed(2)}. Porque comprou financiado, vai pagar o correspondente a ${carrosapagar.toFixed(2)} carros.`
+    }
+</script>

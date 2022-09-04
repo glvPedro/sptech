@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body>
+    <input id="valorporgramas" placeholder="quanto custa cada grama">
+    <input id="pesodasgramas" placeholder="qual o peso do sorvete">
+    <input id="tipocobertura" placeholder="tipo de cobertura">
+    <input id="tiposorvete" placeholder="tipo do sorvete">
+    <button onclick="calcular()">custo do sorvete</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var precoporgrama = Number(valorporgramas.value);
+        var pesodosorvete = Number(pesodasgramas.value);
+        var preco_final = (precoporgrama * pesodosorvete);
+
+        /* var adicaoporgrama = (precoporgrama * 0.11);
+           var subtracaoporgrama = (precoporgrama * 0.89);
+           
+           var adicaocobertura = (precoporgrama + 0.01); */
+
+        if (tiposorvete == "gourmet") {
+            precoporgrama * 0.11;
+        }
+        else {
+            precoporgrama * 0.89;
+        }
+
+        if (tipocobertura != "chocolate") {
+            precoporgrama + 0.01;
+        }
+        else {
+            precoporgrama = Number(valorporgramas.value);
+        }
+
+        if (preco_final > 10) {
+            div_text.innerHTML = `<span style="color: green;"> O seu sorvete vai custar R$ ${preco_final} e vai comprometer a mesada </span>`
+        }
+        else {
+            div_text.innerHTML = `<span style="color: blue;"> Hoje você está maneirando hoje, gastou somente R$${preco_final}. </span>`
+        }
+
+
+    }
+</script>
