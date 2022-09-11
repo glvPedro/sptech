@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_peso" placeholder="seu peso">
+    <input id="ipt_altura" placeholder="sua altura">
+    <button onclick="calcular_masc()">calcular IMC masculino</button>
+    <button onclick="calcular_fem()">calcular IMC feminino</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function calcular_masc() {
+        var imc_masc = Number(ipt_peso.value) / Number(ipt_altura.value * ipt_altura.value);
+        div_text.innerHTML = `seu IMC é de: ${imc_masc.toFixed(2)}`
+    }
+
+    function calcular_fem() {
+        var imc_fem = Number(ipt_peso.value) / Number(ipt_altura.value * ipt_altura.value * 0.9);
+        div_text.innerHTML = `seu IMC é de: ${imc_fem.toFixed(2)}`
+    }
+</script>

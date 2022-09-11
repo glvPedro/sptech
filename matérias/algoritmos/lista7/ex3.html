@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_num1" placeholder="entre com o número1">
+    <input id="ipt_num2" placeholder="entre com número2">
+    <br><br>
+    <button onclick="multiplicar()">multiplicar</button>
+    <button onclick="dividir()">dividir</button>
+    <button onclick="subtrair()">subtrair</button>
+    <button onclick="somar()">somar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function multiplicar() {
+        var mult = Number(ipt_num1.value) * Number(ipt_num2.value);
+        div_text.innerHTML = `O produto entre ${ipt_num1.value} e ${ipt_num2.value} é ${mult.toFixed(2)}`
+    }
+
+    function dividir() {
+        var div = Number(ipt_num1.value) / Number(ipt_num2.value);
+        div_text.innerHTML = `A razão entre ${ipt_num1.value} e ${ipt_num2.value} é ${div.toFixed(2)}`
+    }
+
+    function subtrair() {
+        var sub = Number(ipt_num1.value) - Number(ipt_num2.value);
+        div_text.innerHTML = `A diferença entre ${ipt_num1.value} e ${ipt_num2.value} é ${sub.toFixed(2)}`
+    }
+
+    function somar() {
+        var som = Number(ipt_num1.value) + Number(ipt_num2.value);
+        div_text.innerHTML = `A soma entre ${ipt_num1.value} e ${ipt_num2.value} é ${som.toFixed(2)}`
+    }
+</script>

@@ -8,41 +8,48 @@
     <title>ex1</title>
 </head>
 
-<body>
-    <input id="ipt_nome" placeholder="entre com seu nome">
-    <input id="ipt_modelo" placeholder="modelo a comprar">
-    <input id="ipt_valor" placeholder="valor do carro">
+<body style="text-align: center;">
+    <input id="ipt_nome" placeholder="entre com o seu nome">
+    <input id="ipt_modelo" placeholder="qual o modelo do carro">
+    <input id="ipt_valor" placeholder="valor a ser pago">
     <input id="ipt_cupom" placeholder="entre com um cupom">
-    <button onclick="analisar()">efetuar compra</button>
+    <button onclick="comprar()">efetuar compra</button>
     <br><br>
-    <dvi id="div_text">
+    <div id="div_text">
 
-    </dvi>
+    </div>
 </body>
 
 </html>
 <script>
-    function analisar() {
-        var cupom = Number(ipt_valor.value) * 0.11;
+    function comprar() {
+        var cupomdesconto = Number(ipt_valor.value) * 0.11;
+        var valorfinal_comdesconto = ((ipt_valor.value) - (cupomdesconto));
 
-        if (ipt_modelo.value == "") {
-            alert("Informe o modelo do carro para prosseguir com a compra!")
+        if (ipt_modelo.value == '') {
+            alert('Informe o modelo do carro para prosseguir com a compra!')
             div_text.innerHTML = ''
+            exit();
         }
 
         if (ipt_valor.value < 5000) {
-            alert("Valor inválido! O carro está barato demais")
+            alert('Valor inválido! O carro está barato demais')
             div_text.innerHTML = ''
+            exit();
         }
 
-        if (ipt_cupom.value == "CARRO_NOVO") {
-            alert("Cupom válido! Desconto de 11% aplicado!")
-            div_text.innerHTML = `<span style="color: greenyellow;"><i> Olá, ${ipt_nome.value}! O carro de modelo ${ipt_modelo.value}, de valor padrão R$${ipt_valor.value}, sairá por R$${cupom} </i></span>`
+        if (ipt_cupom.value == 'CARRO_NOVO') {
+            alert('Cupom válido! Desconto de 11% aplicado!')
+            div_text.innerHTML = `Olá, ${ipt_nome.value}! O carro de modelo ${ipt_modelo.value}, de valor padrão R$${ipt_valor.value}, sairá por R$${valorfinal_comdesconto}`
+            div_text.style.color = 'green';
+            div_text.style.fontStyle = 'italic';
         }
 
         else {
-            alert("Cupom inválido! Desconto não será aplicado!")
-            div_text.innerHTML = `<span style="color: red;"><b> Olá, ${ipt_nome.value}! O carro de modelo ${ipt_modelo.value}, de valor padrão R$${ipt_valor.value}, sairá por R$${ipt_valor.value} </b></span>`
+            alert('Cupom inválido! Desconto não será aplicado!')
+            div_text.innerHTML = `Olá, ${ipt_nome.value}! O carro de modelo ${ipt_modelo.value}, de valor padrão R$${ipt_valor.value}, sairá por R$${ipt_valor.value}`
+            div_text.style.color = 'red';
+            div_text.style.fontWeight = 'bold';
         }
     }
 </script>

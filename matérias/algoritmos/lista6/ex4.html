@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ex1</title>
+    <title>ex4</title>
 </head>
 
-<body>
-    <input id="valorporgramas" placeholder="quanto custa cada grama">
-    <input id="pesodasgramas" placeholder="qual o peso do sorvete">
-    <input id="tipocobertura" placeholder="tipo de cobertura">
-    <input id="tiposorvete" placeholder="tipo do sorvete">
-    <button onclick="calcular()">custo do sorvete</button>
+<body style="text-align: center;">
+    <input id="ipt_valor" placeholder="valor por gramas do sorvete">
+    <input id="ipt_peso" placeholder="peso por grama do sorvete">
+    <input id="ipt_tipo" placeholder="tipo do sorvete">
+    <input id="ipt_cobertura" placeholder="cobertura do sorvete">
+    <button onclick="calcular()">calcular</button>
     <br><br>
     <div id="div_text">
 
@@ -23,36 +23,33 @@
 </html>
 <script>
     function calcular() {
-        var precoporgrama = Number(valorporgramas.value);
-        var pesodosorvete = Number(pesodasgramas.value);
-        var preco_final = (precoporgrama * pesodosorvete);
+        var valor = Number(ipt_valor.value);
+        var peso = Number(ipt_peso.value);
+        var tipo = (ipt_tipo.value);
+        var cobertura = (ipt_cobertura.value);
 
-        /* var adicaoporgrama = (precoporgrama * 0.11);
-           var subtracaoporgrama = (precoporgrama * 0.89);
-           
-           var adicaocobertura = (precoporgrama + 0.01); */
+        var total = (valor * peso);
 
-        if (tiposorvete == "gourmet") {
-            precoporgrama * 0.11;
+        if (tipo == 'gourmet') {
+            valor * 0.11;
         }
         else {
-            precoporgrama * 0.89;
+            valor * 0.89;
         }
 
-        if (tipocobertura != "chocolate") {
-            precoporgrama + 0.01;
+        if (cobertura != 'c') {
+            valor + 0.01;
+        }
+        else{
+            valor = Number(ipt_valor.value);
+        }
+
+        if (total > 10) {
+            div_text.innerHTML = `<span style="color: green;"> O seu sorvete vai custar R$ ${total} e vai comprometer a mesada`
         }
         else {
-            precoporgrama = Number(valorporgramas.value);
+            div_text.innerHTML = `<span style="color: blue;"> Hoje você está maneirando hoje, gastou somente R$${total}.`
         }
-
-        if (preco_final > 10) {
-            div_text.innerHTML = `<span style="color: green;"> O seu sorvete vai custar R$ ${preco_final} e vai comprometer a mesada </span>`
-        }
-        else {
-            div_text.innerHTML = `<span style="color: blue;"> Hoje você está maneirando hoje, gastou somente R$${preco_final}. </span>`
-        }
-
 
     }
 </script>

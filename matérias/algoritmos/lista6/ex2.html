@@ -9,9 +9,9 @@
 </head>
 
 <body style="text-align: center;">
-    <input id="ipt_valor" placeholder="valor a vista">
-    <input id="ipt_juros" placeholder="taxa de juros ao mês">
-    <input id="ipt_parcelas" placeholder="quantidade de parcelas">
+    <input id="ipt_valor" placeholder="valor do carro a vista">
+    <input id="ipt_taxa" placeholder="taxa de juros ao mês">
+    <input id="ipt_parcelas" placeholder="qtd de parcelas">
     <button onclick="calcular()">calcular prejú</button>
     <br><br>
     <div id="div_text">
@@ -23,7 +23,7 @@
 <script>
     function calcular() {
         var valor = Number(ipt_valor.value);
-        var juros = Number(ipt_juros.value) / 100 + 1;
+        var juros = Number(ipt_taxa.value);
         var parcelas = Number(ipt_parcelas.value);
 
         var totalapagar = ((valor / parcelas) * juros) * parcelas;
