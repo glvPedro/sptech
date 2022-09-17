@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+</head>
+
+<body style="text-align: center;">
+    <select id="estacoes" onclick="mesesdoano()">
+        <option value="">-- selecione uma estação --</option>
+        <option value="https://s3.static.brasilescola.uol.com.br/be/2021/03/outono.jpg">outono</option>
+        <option value="https://paperx-dex-staging-uploads.s3.sa-east-1.amazonaws.com/images/1588720928326-UCCvZ.png">inverno</option>
+        <option value="https://s2.static.brasilescola.uol.com.br/img/2019/09/primavera.jpg">primavera</option>
+        <option value="https://catracalivre.com.br/wp-content/uploads/2020/10/unnamed-12.jpg">verão</option>
+    </select>
+    <br><br>
+    <div id="div_text">
+    </div>
+    <img style="height: 200px;" id="id_img" src="" alt="estações do ano">
+</body>
+
+</html>
+<script>
+    function mesesdoano() {
+
+        if (estacoes.value == 'https://s3.static.brasilescola.uol.com.br/be/2021/03/outono.jpg') {
+            div_text.innerHTML = 'Outono: março, abril e maio. <br><br>'
+            id_img.src = estacoes.value;
+        }
+
+        else if (estacoes.value == 'https://paperx-dex-staging-uploads.s3.sa-east-1.amazonaws.com/images/1588720928326-UCCvZ.png') {
+            div_text.innerHTML = 'Inverno: junho, julho e agosto. <br><br>'
+            id_img.src = estacoes.value;
+        }
+
+        else if (estacoes.value == 'https://s2.static.brasilescola.uol.com.br/img/2019/09/primavera.jpg') {
+            div_text.innerHTML = 'Primavera: setembro, outubro e novembro. <br><br>'
+            id_img.src = estacoes.value;
+        }
+
+        else if (estacoes.value == 'https://catracalivre.com.br/wp-content/uploads/2020/10/unnamed-12.jpg') {
+            div_text.innerHTML = 'Verão: dezembro, janeiro e fevereiro. <br><br>'
+            id_img.src = estacoes.value;
+        }
+    }
+</script>

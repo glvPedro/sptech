@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+        <h2> simulador de idade de tempo para aposentadoria</h2>
+        <input id="ipt_idade" placeholder="entre com a sua idade">
+
+        <select id="sel_trabalho">
+            <option value="40">empresa pública</option>
+            <option value="35">empresa privada</option>
+            <option value="45">empreendedor</option>
+        </select>
+
+        <button onclick="calcular()">calcular aposentadoria</button>
+        <br><br>
+        <div id="div_text">
+
+        </div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var idade = Number(ipt_idade.value);
+        var trabalho = Number(sel_trabalho.value);
+        var temp_restante = (idade - trabalho);
+        div_text.innerHTML = `Você ainda terá que trabalhar por mais ${temp_restante} anos para se aposentar.`
+    }
+</script>

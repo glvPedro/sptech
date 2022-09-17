@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>tabuada</h2>
+    <select id="opcoes" onchange="tabuada()">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function tabuada() {
+        var tabuada = Number(opcoes.value);
+        div_text.innerHTML = `${opcoes.value} X 2 = ${tabuada * 2}<br>
+                              ${opcoes.value} X 3 = ${tabuada * 3}<br>
+                              ${opcoes.value} X 4 = ${tabuada * 4}<br>
+                              ${opcoes.value} X 5 = ${tabuada * 5}<br>
+                              ${opcoes.value} X 6 = ${tabuada * 6}<br>
+                              ${opcoes.value} X 7 = ${tabuada * 7}<br>
+                              ${opcoes.value} X 8 = ${tabuada * 8}<br>
+                              ${opcoes.value} X 9 = ${tabuada * 9}<br>`
+
+    }
+</script>

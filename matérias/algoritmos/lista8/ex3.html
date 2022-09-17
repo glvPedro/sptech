@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>mercearia</h2>
+    <select id="mercearia">
+        <option value="4.50">leite</option>
+        <option value="9.90">farinha</option>
+        <option value="0.60">ovos</option>
+        <option value="4.95">manteiga</option>
+    </select>
+    <button onclick="calcular()">ver preco</button>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var precoproduto = Number(mercearia.value);
+        alert(`Isso custa R$${precoproduto.toFixed(2)}`)
+    }
+</script>

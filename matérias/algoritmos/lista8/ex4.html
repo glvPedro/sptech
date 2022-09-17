@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>Oração pela paz</h2>
+    <select id="sentimentos" onchange="escolha()">um sentimento ruim e bom!
+        <option value="que eu leve o amor.">onde houver ódio...</option>
+        <option value="que eu leve a esperança.">onde houver desespero...</option>
+        <option value="que eu leve a luz!">onde houver trevas...</option>
+        <option value="eu levo o perdão.">onde houver ofensa...</option>
+    </select>
+</body>
+
+</html>
+<script>
+    function escolha() {
+        var palavra = sentimentos.value;
+        alert(`${palavra}`)
+    }
+</script>

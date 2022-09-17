@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_altura" placeholder="entre com a sua altura" onkeyup="onk_altura()">
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function onk_altura() {
+        var altura = Number(ipt_altura.value);
+
+        if (altura < 1.66) {
+            div_text.innerHTML = 'Você pode ser piloto de corrida'
+        }
+
+        else if (altura < 1.81) {
+            div_text.innerHTML = 'Você pode ser jogador de futebol'
+        }
+        
+        else {
+            div_text.innerHTML = 'Você pode ser jogador de vôlei ou basquete'
+        }
+    }
+</script>

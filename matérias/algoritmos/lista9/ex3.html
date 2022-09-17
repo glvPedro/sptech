@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+
+<body style="text-align: center;">
+    <h2> temperatura para o ser humano</h2>
+    <input id="ipt_temp" placeholder="temperatura do ambiente" onkeyup="onk_temperatura()">
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function onk_temperatura() {
+        var temp = Number(ipt_temp.value);
+
+        if (temp < 14) {
+            div_text.innerHTML = 'Congelante'
+        }
+
+        else if (temp < 22) {
+            div_text.innerHTML = 'Com Frio'
+        }
+
+        else if (temp < 25) {
+            div_text.innerHTML = 'Confortável '
+        }
+
+        else if (temp < 32) {
+            div_text.innerHTML = 'Com Calor'
+        }
+
+        else {
+            div_text.innerHTML = 'Calor escaldante'
+        }
+    }
+</script>

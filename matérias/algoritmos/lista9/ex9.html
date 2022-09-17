@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_meta" placeholder="meta economica">
+    <input id="ipt_guardado" placeholder="qtd de dinheiro guardado">
+    <button onclick="analisar()">analisar economia</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var meta = Number(ipt_meta.value);
+        var dinheiro_guardado = Number(ipt_guardado.value);
+
+        var resultado = (meta - dinheiro_guardado);
+
+        if (resultado == 0) {
+            div_text.innerHTML = `Parabéns, meta alcançada! <br>`
+        }
+
+        else if (resultado < 0) {
+            div_text.innerHTML += `Meta ultrapassada em ${-resultado} <br>`
+        }
+
+        else {
+            div_text.innerHTML = `Força! Ainda em busca da meta! Falta ${resultado}`
+        }
+    }
+</script>

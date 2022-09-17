@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+</head>
+
+<body style="text-align: center;">
+    <h4>Valor guardado: R$<span style="font-weight: bold;" id="span_contador">0.00</span></h4>
+    <button onclick="guardar()">Guardar R$5,00</button>
+    <button onclick="gastar()">Gastar R$10,00</button>
+    <br><br>
+    <div id="div_text">
+        
+    </div>
+</body>
+
+</html>
+<script>
+    var valor = 0;
+
+    function guardar() {
+        span_contador.innerHTML = valor += 5;
+
+        if (valor >= 0) {
+            div_text.innerHTML = '<span style="color: blue;">Finanças OK!</span>'
+        }
+
+        if (valor >= 101) {
+            div_text.innerHTML += '<br>#ostentação'
+        }
+    }
+
+    function gastar() {
+        span_contador.innerHTML = valor -= 10;
+
+        if (valor < 0) {
+            div_text.innerHTML = '<span style="color: red;">Finanças em perigo!</span>'
+        }
+
+        if (valor < -20) {
+            div_text.innerHTML += '<br>Seu nome vai ficar sujo, hein?'
+        }
+    }
+</script>

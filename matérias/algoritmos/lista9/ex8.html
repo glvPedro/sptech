@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_paes" placeholder="pães por dia">
+    <input id="ipt_bolacha" placeholder="bolachas por dia">
+    <input id="ipt_achocolatado" placeholder="achocolatados por dia">
+    <button onclick="verificar()">Verificar calorias</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var paes = Number(ipt_paes.value) * 50;
+        var bolacha = Number(ipt_bolacha.value) * 80;
+        var achocolatado = Number(ipt_achocolatado.value) * 70;
+        var total_calorias = (paes + bolacha + achocolatado);
+
+        if (total_calorias < 200) {
+            div_text.innerHTML = 'Parabéns, vai sair em forma da quarentena!'
+        }
+
+        else if (total_calorias < 401) {
+            div_text.innerHTML = 'Cuidado, vai ficar mais "fofinho(a)" após quarentena!'
+        }
+
+        else {
+            div_text.innerHTML = 'Bom, acho que muitos não vão te reconhecer após a quarentena'
+        }
+    }
+</script>

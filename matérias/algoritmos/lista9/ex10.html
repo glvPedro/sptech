@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_nome" placeholder="entre com seu nome">
+    <input id="ipt_saldo" placeholder="entre com seu saldo">
+    <button onclick="verificar()">verificar conta</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var saldo = Number(ipt_saldo.value);
+
+        if (saldo < 0) {
+            div_text.innerHTML = `Com o saldo de ${saldo} o cliente ${ipt_nome.value} está com saldo DEVEDOR`
+        }
+
+        else if (saldo <= 2000) {
+            div_text.innerHTML = `Com o saldo de ${saldo} o cliente ${ipt_nome.value} está com saldo NORMAL`
+        }
+
+        else if (saldo <= 5000) {
+            div_text.innerHTML = `Com o saldo de ${saldo} o cliente ${ipt_nome.value} está com saldo ACIMA DA MÉDIA`
+        }
+
+        else {
+            div_text.innerHTML = `Com o saldo de ${saldo} o cliente ${ipt_nome.value} TEM PERFIL DE INVESTIDOR`
+        }
+    }
+</script>

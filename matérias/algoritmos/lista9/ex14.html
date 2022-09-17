@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14</title>
+</head>
+
+<body style="text-align: center;">
+    <h4>Vida do Lutador: <span id="span_text">1000</span></h4>
+    <img id="id_img" style="height: 200px;" src="https://esportenewsmundo.com.br/wp-content/uploads/2021/12/charlesdobronx4.jpg" alt="">
+    <br><br>
+    <button id="btn1" onclick="apanhar()">apanhar</button>
+    <button id="btn2" onclick="concentrar()">concentrar força</button>
+    <br><br>
+    <div id="div_msg">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var vida = 1000;
+
+    function apanhar() {
+        vida -= 100;
+        span_text.innerHTML = vida.toFixed(2);
+
+        if (vida <= 0) {
+            div_msg.innerHTML = 'Lutador já era!'
+            id_img.src = "https://a.espncdn.com/photo/2021/1212/r950110_1296x729_16-9.jpg"
+            document.getElementById("btn1").disabled = true;
+            document.getElementById("btn2").disabled = true;
+        }
+    }
+
+    function concentrar() {
+        vida = (vida + (vida * 0.05));
+        span_text.innerHTML = vida.toFixed(2);
+        div_msg.innerHTML = "Lutador ainda vivo!"
+        id_img.src = "https://esportenewsmundo.com.br/wp-content/uploads/2021/12/charlesdobronx4.jpg"
+    }
+</script>

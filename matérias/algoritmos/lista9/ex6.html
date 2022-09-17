@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+</head>
+
+<body style="text-align: center;">
+    <select id="qual_time">
+        <option value="">-- selecione uma opção --</option>
+        <option value="santos">santos</option>
+        <option value="palmeiras">palmeiras</option>
+        <option value="corinthians">corinthians</option>
+        <option value="sao_paulo">são paulo</option>
+    </select>
+    <button onclick="registro()">fale sobre esse time</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function registro() {
+        var times = qual_time.value;
+
+        if (times == '') {
+            div_text.innerHTML = 'selecione um time'
+        }
+
+        else if(times == 'santos') {
+            div_text.innerHTML = '<span style="background-color: gray; color: black;">Agora que dá a bola é o Santos</span>'
+        }
+
+        else if(times == 'palmeiras') {
+            div_text.innerHTML = '<span style="background-color: green; color: white;">Salve o alviverde imponente</span>'
+        }
+
+        else if(times == 'corinthians') {
+            div_text.innerHTML = '<span style="background-color: black; color: white;">Salve o Corinthians</span>'
+        }
+
+        else if(times == 'sao_paulo') {
+            div_text.innerHTML = '<span style="background-color: black; color: red;">Salve o Tricolor paulista</span>'
+        }
+    }
+</script>

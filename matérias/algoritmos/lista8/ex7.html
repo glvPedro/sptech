@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>4 grandes times de SP!</h2>
+    <select id="times">
+        <option
+            value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD0NrsRiokfOG4c8-LIJ5T6Off7VKnhMpkSSatTddUw6OQNVFB1I8bDDR-79NmxnldW-Y&usqp=CAU">
+            são paulo</option>
+        <option value="https://seuladogeek.com.br/wp-content/uploads/2022/02/simbolo-santos-fc-png-e-vetor.png">santos
+        </option>
+        <option value="https://logodetimes.com/wp-content/uploads/palmeiras.png">palmeiras</option>
+        <option
+            value="https://www.pngfind.com/pngs/m/503-5039851_paulinho-sport-club-corinthians-paulista-hd-png-download.png  ">
+            corinthians</option>
+    </select>
+    <button onclick="mostraremblemas()">ver escudo</button>
+    <br><br>
+    <img src="" alt="emblemas dos times de são paulo" id="id_img" style="height: 200px;">
+</body>
+
+</html>
+<script>
+    function mostraremblemas() {
+        id_img.src = times.value;
+    }
+</script>

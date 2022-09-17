@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>estações do ano</h2>
+    <select id="opcoes" onchange="estacoes()">
+        <option value="">-- selecione uma opção --</option>
+        <option value="https://s3.static.brasilescola.uol.com.br/be/2021/03/outono.jpg">outono</option>
+        <option value="https://s2.static.brasilescola.uol.com.br/img/2019/09/primavera.jpg">primavera</option>
+        <option value="https://cevisa.org.br/portal/wp-content/uploads/2021/01/verao.png">verão</option>
+        <option value="https://static.escolakids.uol.com.br/2020/07/frio-extremo.jpg">inverno</option>
+    </select>
+    <br><br>
+    <img src="" alt="imagem das estações do ano" id="id_img" style="height: 200px;">
+</body>
+
+</html>
+<script>
+    function estacoes() {
+        id_img.src = opcoes.value;
+    }
+</script>

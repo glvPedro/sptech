@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    <h2> classe social de um cidadão de Tuvalu!</h2>
+    <input id="ipt_renda" placeholder="entre com a sua renda">
+    <button onclick="analisar()">analisar renda</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var renda = Number(ipt_renda.value);
+
+        if (renda < 251) {
+            div_text.innerHTML = 'classe E'
+        }
+
+        else if (renda < 901) {
+            div_text.innerHTML = 'classe D'
+        }
+
+        else if (renda < 2501) {
+            div_text.innerHTML = 'classe C'
+        }
+
+        else if (renda < 9501) {
+            div_text.innerHTML = 'classe B'
+        }
+
+        else {
+            div_text.innerHTML = 'classe A'
+        }
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12</title>
+</head>
+
+<body style="text-align: center;">
+    <h4>Você já clicou <span style="font-weight: bold;" id="id_contador">0</span> vezes</h4>
+    <button onclick="clicar()">clica neu</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var cliques = 0;
+    function clicar() {
+        id_contador.innerHTML = ++cliques; 
+
+        if (cliques < 5) {
+            div_text.innerHTML = 'Dedo fraquinho, hein'
+        }
+
+        else if (cliques < 11) {
+            div_text.innerHTML = 'Dedo bom, mano'
+        }
+
+        else if (cliques < 16) {
+            div_text.innerHTML = 'Gosta de clicar, hein!'
+        }
+
+        else{
+            div_text.innerHTML = 'Eita dedo nervoso!'
+        }
+    }
+</script>
