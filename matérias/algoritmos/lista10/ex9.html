@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+
+<body style="text-align: center;">
+    <input type="text" id="ipt_login" placeholder="login do usuário">
+    <input type="password" id="ipt_senha" placeholder="senha do usuário">
+    <input type="password" id="ipt_codigo" placeholder="código de seguranda do usuário">
+    <button onclick="entrar()">entrar</button>
+</body>
+
+</html>
+<script>
+    function entrar() {
+        var login = (ipt_login.value);
+        var senha = (ipt_senha.value);
+        var codigo = (ipt_codigo.value);
+
+        if (login == 'sptech' && senha == 'digital' && codigo == '123') {
+            alert('Usuário autenticado com sucesso')
+        }
+
+        else {
+            alert('Falha na autenticação')
+        }
+    }
+</script>

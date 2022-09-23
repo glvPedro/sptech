@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    <select id="proteina" onchange="on_escolha()">
+        <option value="">-- selecione uma opção --</option>
+        <option value="ovo">ovo</option>
+        <option value="soja">soja</option>
+        <option value="carne">carne</option>
+    </select>
+
+    <select id="sobremesa" onchange="on_escolha()">
+        <option value="">-- selecione uma opção --</option>
+        <option value="pudim">pudim</option>
+        <option value="petit_gateau">petit gateau</option>
+        <option value="brigadeiro_soja">brigadeiro de soja</option>
+    </select>
+</body>
+
+</html>
+<script>
+    function on_escolha() {
+        if (proteina.value == 'soja' && sobremesa.value == 'brigadeiro_soja') {
+            alert('você poderia ser vegano')
+        }
+        else {
+            alert('você não pode ser vegano')
+        }
+    }
+
+</script>
+
+<!-- <select id="proteina" onchange="on_escolha()">
+        <option value="">-- selecione uma opção --</option>
+        <option value="nv">ovo</option>
+        <option value="v">soja</option>
+        <option value="nv">carne</option>
+    </select>
+
+    <select id="sobremesa" onchange="on_escolha()">
+        <option value="">-- selecione uma opção --</option>
+        <option value="nv">pudim</option>
+        <option value="nv">petit gateau</option>
+        <option value="v">brigadeiro de soja</option>
+    </select>
+    
+    
+    function on_escolha() {
+        if (proteina.value == 'v' && sobremesa.value == 'v') {
+            alert('você poderia ser vegano')
+        }
+        else {
+            alert('você não pode ser vegano')
+        }
+    } -->

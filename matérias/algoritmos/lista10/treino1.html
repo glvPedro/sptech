@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_nome" placeholder="nome da fruta">
+    <input id="ipt_preco" placeholder="valor da fruta">
+    <button onclick="analisar()">vou comprar?</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        nome_fruta = (ipt_nome.value);
+        valor_fruta = Number(ipt_preco.value);
+
+        if (nome_fruta == 'uva' && valor_fruta < 8.50) {
+            div_Text.innerHTML = 'vou comprar'
+        }
+        else {
+            div_Text.innerHTML = 'sem fruta hj :('
+        }
+    }
+</script>

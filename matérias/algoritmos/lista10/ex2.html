@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_rendausuario" placeholder="renda do usuario">
+    <input id="ipt_rendafamilia" placeholder="renda da familia">
+    <button onclick="verificar()">verificar ajuda</button>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var renda_usuario = Number(ipt_rendausuario.value);
+        var renda_familia = Number(ipt_rendafamilia.value);
+
+        if (renda_usuario <= 1050 && renda_familia <= 2100) {
+            alert('Você terá direito!')
+        }
+
+        else {
+            alert('Você NÃO terá direito')
+        }
+    }
+</script>

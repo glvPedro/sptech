@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_inicio" placeholder="inicio do intervalo">
+    <input id="ipt_fim" placeholder="fim do intervalo">
+
+    <input id="ipt_nome" placeholder="nome do piloto">
+    <input id="ipt_altura" placeholder="altura do piloto">
+    <button onclick="cadastrar()">cadastrar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function cadastrar() {
+        var inicio_intervalo = Number(ipt_inicio.value);
+        var fim_intervalo = Number(ipt_fim.value);
+
+        var nome_piloto = (ipt_nome.value);
+        var altura_piloto = Number(ipt_altura.value);
+
+        if (inicio_intervalo > 1 && fim_intervalo > inicio_intervalo) {
+
+            if (altura_piloto > inicio_intervalo && altura_piloto < fim_intervalo) {
+                div_text.innerHTML += `O candidato ${nome_piloto} com altura de ${altura_piloto.toFixed(2)} participará do processo de seleção de piloto <br>`
+            }
+            else if (){
+                div_text.innerHTML += `Infelizmente o candidato ${nome_piloto} com altura de ${altura_piloto.toFixed(2)} não atende os requisitos <br>`
+            }
+            
+            else{
+                alert('o inicio do intervalo tem que ser maior que 1; e o fim do intervalo tem que ser maior que o valor do inicio do intervalo <br>')
+            }
+
+        }
+
+
+
+
+    }
+</script>

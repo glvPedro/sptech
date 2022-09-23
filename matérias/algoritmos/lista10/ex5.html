@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_horario" placeholder="q hrs vc vê netflix?">
+    <button onclick="analisar()">Ver recomendação</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var horario = Number(ipt_horario.value);
+
+        if (horario >= 19 && horario <= 21) {
+            div_text.innerHTML = `Não é recomendável que você assista sua série favorita no horário das ${horario.toFixed(2)}!`
+        }
+
+        else{
+            div_text.innerHTML = `O horário das ${horario.toFixed(2)} é adequado para assistir sua série favorita!`
+        }
+    }
+</script>
