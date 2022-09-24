@@ -45,15 +45,19 @@ select * from aluno as a join projeto as p on a.ra = p.fk_aluno;
 
 select * from aluno as al join acompanhante as ac on al.ra = ac.fk_aluno;
 
-select * from aluno as novato join aluno as experiente on novato.ra = experiente.fk_representante;
+select * from aluno as novato right join aluno as experiente on novato.ra = experiente.fk_representante;
 
 
 select a.nome as nomealuno, a.telefone, p.nome as nomeprojeto, p.descricao from aluno as a join projeto as p on a.ra = p.fk_aluno where ra=1;
 
-select * from aluno as al join projeto as p on al.ra = p.fk_aluno join acompanhante as ac on ac.fk_aluno = al.ra;
+select * from aluno as al right join projeto as p on al.ra = p.fk_aluno join acompanhante as ac on ac.fk_aluno = al.ra;
 
 
--- exercício 1 --
+-- exercício 2 --
+
+create database campanha;
+use campanha;
+
 create table organizador(
 id_organizador int primary key auto_increment,
 nome varchar(45),
@@ -61,12 +65,12 @@ rua varchar(45),
 bairro varchar(45),
 email varchar(45),
 organizador_exp int,
-foreign key (organizador) references organizador(id_organizador)
+foreign key (organizador_exp) references organizador(id_organizador)
 ) auto_increment=30;
 
-insert into organizador (nome,rua,bairro,email,organizador_exp) values ('rojério','rua noventa e cinco','jardim SP','rogeriosenna@hotmail.com',null),
-																	   ('silvester','r. recanto das rosas','guaianases','silvester@hotmail.com',1),
-                                                                       ('amaduk','rua serra do mar','jardim simone','amaduk@hotmail.com',3);
+insert into organizador(nome,rua,bairro,email,organizador_exp) values ('rojério','rua noventa e cinco','jardim SP','rigerio@hotmail.com',30),
+																	  ('diego','recanto das rosas','guaianases','dieguinho@hotmail.com',30),
+                                                                      ('amaduk','rua serra do mar','jardim simone','amaduk@hotmail.com',31);
 
 create table campanha(
 id_campanha int primary key auto_increment,
@@ -76,3 +80,25 @@ dt_finalcampanha date,
 fk_organizador int,
 foreign key (fk_organizador) references organizador(id_organizador)
 )auto_increment=500;
+
+insert into campanha(categoria,inst_areceber,dt_finalcampanha,fk_organizador) values ('beneficente','tivit','2023-03-12',30),
+																				     ('cancer','dramon','2028-05-17',31),
+                                                                                     ('doação','sptech','2025-09-22',30);
+
+select * from organizador;
+select * from campanha;
+
+select * from organizador as o join campanha as c on c.fk_organizador = o.id_organizador;
+
+select * from organizador as o join campanha as c on c.fk_organizador = o.id_organizador where o.nome = 'rojério';
+
+select * from organizador as experiente join organizador as novato on novato.organizador_exp = experiente.id_organizador; 
+
+select * from organizador as experiente right join organizador as novato on novato.organizador_exp = experiente.id_organizador 
+										where experiente.nome = 'rojério';
+
+select * from organizador as org_novato right join campanha as c on c.fk_organizador = org_novato.id_organizador 
+										right join organizador as org_experiente on c.fk_organizador = org_experiente.id_organizador;
+
+select * from organizador as org_novato left join campanha as c on c.fk_organizador = org_novato.id_organizador 
+										left join organizador as org_experiente on c.fk_organizador = org_experiente.id_organizador where org_novato.organizador_exp = 30;

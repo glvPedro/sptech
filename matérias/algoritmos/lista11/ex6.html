@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>Você já clicou <span id="span_id">0</span> vezes</h2>
+    <button onclick="registrar()">clique cabalístico</button>
+</body>
+
+</html>
+<script>
+    var clique = 0;
+    function registrar() {
+        clique = clique + 1;
+        if (clique == 3 || clique == 4 || clique == 7 || clique == 10) {
+            span_id.innerHTML = clique;
+            alert (`Você clicou ${clique} vezes e Juliana gosta desse número!`)
+        }
+        else {
+            span_id.innerHTML = clique;
+        }
+    }
+</script>

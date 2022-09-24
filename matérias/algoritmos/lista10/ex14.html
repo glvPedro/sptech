@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14</title>
+</head>
+
+<body style="text-align: center;">
+    <div id="sumir">
+        <input id="inicio_piloto" placeholder="inicio piloto">
+        <input id="fim_piloto" placeholder="fim piloto">
+
+        <input id="inicio_jogador" placeholder="inicio jogador">
+        <input id="fim_jogador" placeholder="fim jogador">
+
+        <button onclick="cadastrar()">selecionar</button>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+    <div id="aparecer" style="display: none;">
+        <!-- style="display: none;" -->
+        <h2>Processo de Seleção de novos atletas</h2>
+        <br>
+        <h4>Critério de Seleção de piloto – altura entre 9,99 até 9,99</h4>
+        <h4>Critério de Seleção de jogador de basquete – altura entre 9,99 até 9,99</h4>
+        <br>
+        <br>
+        <input id="ipt_nome" placeholder="nome do candidato">
+        <input id="ipt_altura" placeholder="altura do candidato">
+        <select id="modalidades" onchange="on_modal()">
+            <option value="">-- selecione uma opção --</option>
+            <option value="piloto">piloto</option>
+            <option value="basquete">jogador de basquete</option>
+        </select>
+        <br><br>
+        <div id="div_text">
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var nomecandidato = 0;
+    var alturacandidato = 0;
+
+    function cadastrar() {
+        var iniciopiloto = Number(inicio_piloto.value);
+        var fimpiloto = Number(fim_piloto.value);
+
+        var iniciojogador = Number(inicio_jogador.value);
+        var fimjogador = Number(fim_jogador.value);
+
+        /* -----------------------------------------------------*/
+
+        if (iniciopiloto > 1 && fimpiloto > iniciopiloto) {
+
+            if (iniciojogador > 1.5 && fimjogador > iniciojogador) {
+                sumir.style.display = "none";
+                aparecer.style.display = "block";
+
+                /* document.getElementById("sumir").style.display = "none";
+                document.getElementById("aparecer").style.display = "block"; */
+            }
+        }
+
+        else {
+            alert('o inicio do intervalo tem que ser maior que 1; e o fim do intervalo tem que ser maior que o valor do inicio do intervalo')
+        }
+
+        on_modal()
+    }
+
+    function on_modal() {
+        nomecandidato = (ipt_nome.value);
+        alturacandidato = Number(ipt_altura.value);
+
+        if (modalidades == 'piloto' && iniciojogador > 1.5 && fimjogador > iniciojogador) {
+            div_text.innerHTML += `O candidato ${nomecandidato} com altura de ${alturacandidato.toFixed(2)} participará do processo de seleção de piloto`
+        }
+        else if (modalidades == 'piloto' && iniciojogador < 1.5 && fimjogador < iniciojogador) {
+            div_text.innerHTML += `Infelizmente o candidato ${nomecandidato} com altura de ${alturacandidato.toFixed(2)} não atende os requisitos`
+        }
+
+        else if (modalidades == 'basquete' && iniciojogador > 1.5 && fimjogador > iniciojogador) {
+            div_text.innerHTML += `O candidato ${nomecandidato} com altura de ${alturacandidato.toFixed(2)} participará do processo de seleção de jogador`
+        }
+
+        else if (modalidades == 'basquete' && iniciojogador < 1.5 && fimjogador < iniciojogador) {
+            div_text.innerHTML += `Infelizmente o candidato ${nomecandidato} com altura de ${alturacandidato.toFixed(2)} não atende os requisitos`
+        }
+    }
+</script>
+
+<!-- não sei oq eu errei😢 -->

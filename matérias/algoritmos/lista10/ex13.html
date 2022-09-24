@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_tempo" placeholder="anos trabalhados">
+    <input id="ipt_hectares" placeholder="qtd kilos rendidos">
+    <input id="ipt_faltou" placeholder="dias faltados por doença">
+    <button onclick="verificar()">deu match?</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+    <img style="height: 300px;" id="id_img" src="" alt="">
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var tempotrabalhado = Number(ipt_tempo.value);
+        var kilosrendidos = Number(ipt_hectares.value);
+        var diasdefaltas = Number(ipt_faltou.value);
+
+        if (tempotrabalhado >= 5 && kilosrendidos >= 300 && diasdefaltas < 5) {
+            div_text.innerHTML = 'Minha filha será sua!'
+            id_img.src = 'https://lurodrigues.com.br/wp-content/uploads/2022/04/28-1-vestido-nova-noiva-allegra-casamento.jpg'
+        }
+        else {
+            div_text.innerHTML = 'Deu ruim! Trabalhe mais 2 anos'
+            id_img.src = 'https://thumbs.dreamstime.com/b/gatinha-e-filha-pequena-argumentando-pai-asi%C3%A1tico-jovem-de-menina-discutindo-gritando-um-ao-outro-bravo-com-seu-filho-indon%C3%A9sio-160670961.jpg'
+        }
+    }
+</script>

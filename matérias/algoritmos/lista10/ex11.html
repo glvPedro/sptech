@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_idade" placeholder="idade do usuário">
+    <input id="ipt_salario" placeholder="salário do usuário">
+    <button onclick="analisar()">analisar situação</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var idade = (ipt_idade.value);
+        var salario = Number(ipt_salario.value);
+
+        if (idade < 18 && salario < 2500) {
+            div_text.innerHTML = 'menor de idade e liso'
+        }
+
+        else if (idade < 18 && salario >= 2500) {
+            div_text.innerHTML = 'Menor de idade e ostentação'
+        }
+
+        else if (idade >= 18 && salario < 3500) {
+            div_text.innerHTML = 'Maior de idade e liso'
+        }
+
+        else if (idade >= 18 && salario >= 3500 && salario <= 7000) {
+            div_text.innerHTML = 'Maior de idade e ostentação'
+        }
+
+        else if (idade >= 18 && salario > 7000) {
+            div_text.innerHTML = 'Maior de idade mega e ostentação'
+        }
+    }
+</script>

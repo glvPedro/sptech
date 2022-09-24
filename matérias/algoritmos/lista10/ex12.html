@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_passagem" placeholder="qtd passagens a aderir">
+    <button onclick="registrar()">comprar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function registrar() {
+        var qtd_passagem = Number(ipt_passagem.value);
+        var valor_final = (qtd_passagem * 4.40);
+
+        var desconto3percent = (valor_final * 0.03);
+        var desconto5percent = (valor_final * 0.05);
+        var desconto7percent = (valor_final * 0.07);
+
+        if (qtd_passagem >= 8 && qtd_passagem <= 50) {
+
+            if (qtd_passagem >= 8 && qtd_passagem <= 19) {
+                div_text.innerHTML = `Total a pagar: R$${desconto3percent.toFixed(2)}`
+            }
+            else if (qtd_passagem >= 20 && qtd_passagem <= 49) {
+                div_text.innerHTML = `Total a pagar: R$${desconto5percent.toFixed(2)}`
+            }
+            else if (qtd_passagem = 50) {
+                div_text.innerHTML = `Total a pagar: R$${desconto7percent.toFixed(2)}`
+            }
+            else {
+                div_text.innerHTML = `Total a pagar: R$${qtd_passagem.toFixed(2)}`
+            }
+        }
+        else {
+            alert('Quantidade inválida para o Fidelidade!')
+        }
+    }
+</script>

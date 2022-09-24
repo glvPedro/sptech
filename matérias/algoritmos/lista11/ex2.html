@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_nota" placeholder="nota do enem">
+    <input id="ipt_vestibular" placeholder="nota vestibular interno">
+    <button onclick="avaliar()">avaliação</button>
+</body>
+
+</html>
+<script>
+    function avaliar() {
+        var notaenem = Number(ipt_nota.value);
+        var notainterna = Number(ipt_vestibular.value);
+
+        if (notaenem >= 800 || notainterna >= 700) {
+            alert('Parabéns! Aprovado')
+        }
+        else {
+            alert('ente semestre que vem!')
+        }
+    }
+</script>
