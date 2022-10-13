@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="qtd_voltas" placeholder="qts voltas o carro dar">
+    <button onclick="corrida()">iniciar corrida!</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function corrida() {
+        var index = 1;
+        var voltas = Number(qtd_voltas.value);
+
+        while (index <= voltas) {
+            div_text.innerHTML += `Carro dando a ${index}ª volta <br>`
+            index++;
+        }
+        if (index > voltas) {
+            div_text.innerHTML += `corrida finalizada!<br>`
+        }
+    }
+</script>

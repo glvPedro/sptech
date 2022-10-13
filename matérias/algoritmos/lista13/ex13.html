@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+</head>
+
+<body style="text-align: center;">
+    <select name="" id="slc_tabuada">
+        <option value="">-- selecione uma tabuada --</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <input id="ipt_num" placeholder="até qual número?">
+    <button onclick="tabuadinha()">ver tabuada</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function tabuadinha() {
+        var i = 1;
+        var numerolimite = Number(ipt_num.value);
+        var tabuadavalue = slc_tabuada.value;
+
+        while (i <= numerolimite) {
+            div_text.innerHTML += `${tabuadavalue} X ${i} = ${tabuadavalue * i}<br>`
+            i++;
+        }
+    }
+</script>

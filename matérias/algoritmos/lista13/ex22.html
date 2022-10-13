@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex22</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="mostrarmultiplo()">Curto 3 e 5!</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function mostrarmultiplo() {
+        var i = 1;
+
+        while (i <= 100) {
+
+            if (i % 3 == 0 && i % 5 == 0) {
+                div_text.innerHTML += `É TRI! É PENTA!<br>`
+            }
+
+            else if (i % 3 == 0) {
+                div_text.innerHTML += `É TRI!<br>`
+            }
+
+            else if (i % 5 == 0) {
+                div_text.innerHTML += `É PENTA!<br>`
+            }
+            else {
+                div_text.innerHTML += `${i}<br>`
+            }
+            i++;
+        }
+
+    }
+</script>

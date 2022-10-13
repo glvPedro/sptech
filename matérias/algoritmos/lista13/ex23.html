@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex23</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_guardado" placeholder="dinheiro guardado">
+    <input id="ipt_guardar" placeholder="guardar por mês">
+    <input id="ipt_meses" placeholder="qtd de mêses">
+    <button onclick="poupar()">vamos poupar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function poupar() {
+        var i = 0;
+
+        var guardado = Number(ipt_guardado.value);
+        var guardar = Number(ipt_guardar.value);
+        var qtdmeses = Number(ipt_meses.value);
+
+        var poupado = (guardar * qtdmeses);
+        var total = ((guardar * qtdmeses) + guardado);
+
+        /* ---------------------------------------------------------------------------------------------------------------- */
+
+        if (guardado == '' && guardar == '' && qtdmeses == '') {
+            alert('um dos campos está em branco. por favor, insira um valo no campo e tente novamente!')
+        }
+        else {
+            if (guardar < 0) {
+                alert('o valor a ser depositado tem que ser maior que zero. por favor, tente novamente!')
+            }
+            else if (qtdmeses < 6 && qtdmeses > 20) {
+                alert('a quantidade de meses a ser depositado tem que ser entre 6 e 20. por favor, tente novamente!')
+            }
+            else {
+                div_text.innerHTML = `Marco tinha ${guardado.toFixed(2)}, depois do depósito do ${qtdmeses}º mês ele ficou com ${total.toFixed(2)}<br>`
+
+                div_text.innerHTML += `Você começou com R$ ${guardado.toFixed(2)}guardado<br>`
+                div_text.innerHTML += `Durante os ${qtdmeses} meses você poupou R$ ${poupado.toFixed(2)}<br>`
+                div_text.innerHTML += `E agora você tem: R$ ${total.toFixed(2)}<br>`
+            }
+        }
+    }
+</script>

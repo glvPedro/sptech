@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_titulo" placeholder="qtd titulos q seu time tem">
+    <button onclick="mostrartitulos()">Ver troféus de mundiais FIFA</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+    <!-- alt = 'imagem dos clubes cuja FIFA concebeu tais números de titulos -->
+</body>
+
+</html>
+<script>
+    function mostrartitulos() {
+        var contador = 0;
+        var qtdtitulo = Number(ipt_titulo.value);
+
+        if (qtdtitulo <= 0) {
+            div_text.innerHTML = `<img style="height: 100px;"
+            src="https://ogimg.infoglobo.com.br/in/24097293-3e9-4c5/FT1086A/652/x85841104_Soccer-FootballCopa-LibertadoresFinalFlamengo-fans-watching-the-finalRio-de-Jan.jpg.pagespeed.ic.eT6kZdnwDv.jpg"
+            alt="">`;
+        }
+        else {
+            while (contador < qtdtitulo) { /* o lloping é posto menor doq a quantidade pq o contador começa naturalmente em 0, e não em 1, como no oriente */
+                div_text.innerHTML += `<img style="height: 100px;"
+            src="https://cf.shopee.com.br/file/f4957cbcf401d373af4218e035197087"
+            alt="">`;
+                contador++;
+            }
+        }
+
+    }
+</script>
+<!-- https://cf.shopee.com.br/file/f4957cbcf401d373af4218e035197087 -->

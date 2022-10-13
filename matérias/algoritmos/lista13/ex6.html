@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_nome" placeholder="nome da pessoa que mais ama">
+    <input id="ipt_qtd" placeholder="o quanto vc ama essa pessoa">
+    <button onclick="expressar()">expressar amor</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function expressar() {
+        var quantoamor = ipt_qtd.value;
+        var contador = 0;
+
+        while (contador < quantoamor) {
+            div_text.innerHTML += `${ipt_nome.value} eu te amo! Sempre lembre disso!<br>`
+            contador ++;
+        }
+    }
+</script>

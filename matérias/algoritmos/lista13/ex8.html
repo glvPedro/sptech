@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_num" placeholder="número entre 0 a 200">
+    <button onclick="exibirmultiplos()">adoro múltiplos de 7</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function exibirmultiplos() {
+        var contador = 0;
+        var numero = Number(ipt_num.value);
+        var boolean = numero >= 0 && numero < 201;
+
+        if (boolean) {
+            while (contador <= numero) {
+                if (contador % 7 == 0) {
+                    div_text.innerHTML += `${contador}<br>`
+                }
+                contador++;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_dias" placeholder="qts dias de musculação?">
+    <button onclick="exibir()">exibir rotina mensal</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function exibir() {
+        var i = 0;
+        var dias = Number(ipt_dias.value);
+
+        while (i < 30) {
+            if (i % dias == 0) {
+                i++;
+                div_text.innerHTML += `dia ${i} - musculação <br>`;
+            } else {
+                i++;
+                div_text.innerHTML += `dia ${i} - Comer, dormir, etc <br>`;
+            }
+        }
+
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_num1" placeholder="entre com o num1">
+    <input id="ipt_num2" placeholder="entre com o num2">
+    <button onclick="pares()">S2 pares</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function pares() {
+        var contador = 0;
+        var primeirointervalo = Number(ipt_num1.value);
+        var segundointervalo = Number(ipt_num2.value);
+
+        while (contador % 2 ==0) {
+            div_text.innerHTML += `seus números pares: ${primeirointervalo} e ${segundointervalo}<br>`
+            contador++;
+        }
+    }
+</script>

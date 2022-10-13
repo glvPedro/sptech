@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex20</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_bus" placeholder="qtd ônibus a pegar">
+    <input id="ipt_trem" placeholder="qtd trem a pegar">
+    <input id="ipt_metro" placeholder="qtd metrô a pegar">
+    <button onclick="calculartrajeto()">#partiu trajeto</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function calculartrajeto() {
+        var i = 1;
+
+        var onibus = Number(ipt_bus.value);
+        var trem = Number(ipt_trem.value);
+        var metro = Number(ipt_metro.value);
+
+        while (i <= onibus) {
+
+            div_text.innerHTML += `<br><span style="color: red;">pegando o ${i}° busão</span>`;
+
+            if (i == 2) {
+                div_text.innerHTML += '(começando a cansar)'
+            }
+
+            else if (i >= 3) {
+                div_text.innerHTML += '(já cansado!)'
+            }
+
+            i++;
+        }
+
+        i = 1;
+        while (i <= trem) {
+
+            div_text.innerHTML += `<br><span style="color: green;">pegando o ${i}° trem</span>`;
+
+            if (i == 2) {
+                div_text.innerHTML += '(começando a cansar)'
+            }
+
+            else if (i >= 3) {
+                div_text.innerHTML += '(já cansado!)'
+            }
+            i++;
+
+        }
+
+        i = 1;
+        while (i <= metro) {
+
+            div_text.innerHTML += `<br><span style="color: blue;">pegando o ${i}° metrô</span>`;
+
+            if (i == 2) {
+                div_text.innerHTML += '(começando a cansar)'
+            }
+            else if (i >= 3) {
+                div_text.innerHTML += '(já cansado!)'
+            }
+            i++;
+        }
+        i = 1;
+    }
+</script>

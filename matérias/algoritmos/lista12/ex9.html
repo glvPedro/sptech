@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_frase" placeholder="entre com uma frase">
+    <input id="ipt_num" placeholder="entre com um número">
+    <button onclick="repeat()">papagaio</button>
+</body>
+
+</html>
+<script>
+    function repeat() {
+        var contador = 0;
+        var quantidade = Number(ipt_num.value);
+        var frase = ipt_frase.value;
+
+        while (contador < quantidade) {
+            alert(frase)
+            ++contador;
+        }
+    }
+</script>

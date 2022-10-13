@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex25</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_guardado" placeholder="qtd guardado">
+    <input id="ipt_poupar" placeholder="qtd a guardar">
+    <input id="ipt_meses" placeholder="por qtd meses">
+    <input id="ipt_juros" placeholder="juros a.m">
+    <button onclick="poupar()">vamos poupar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function poupar() {
+        var i = 1;
+
+        var guardado = Number(ipt_guardado.value);
+        var poupar = Number(ipt_poupar.value);
+        var qtdmeses = Number(ipt_meses.value);
+        var juros = Number(ipt_juros.value);
+
+        var total1 = (poupar * qtdmeses);
+        var total2 = ((total1 * juros) + guardado);
+        var rendimento = (juros * qtdmeses);
+        var totaltotal = total1 + guardado / 100;
+
+        if (poupar <= 0) {
+            alert('o dinheiro a ser guardado tem que ser maior que 0');
+        }
+
+        else if (qtdmeses <= 10) {
+            alert('o período a ser guardado tem que ser maior que 10');
+        }
+
+        else if (juros < 0.50 || juros > 2.00) {
+            alert('o juros a ser Aplicado tem que ser entre 0.50 e 2.00');
+        }
+
+        else {
+            while (i <= qtdmeses) {
+                div_text.innerHTML += `Mês ${i} - saldo inicial = R$${(total1 / i).toFixed(2)} saldo final = R$${(((poupar * juros) + guardado) / i).toFixed(2)}<br>`
+                i++;
+            }
+            div_text.innerHTML += `<br>Você começou com R$ ${guardado.toFixed(2)}<br>`
+            div_text.innerHTML += `Depositou R$ ${poupar.toFixed(2)}<br>`
+            div_text.innerHTML += `agora você tem: R$ ${total2.toFixed(2)}<br>`
+            div_text.innerHTML += `Neste período sua conta rendeu R$ ${rendimento.toFixed(2)}<br>`
+            div_text.innerHTML += ` Sua rentabilidade foi de ${totaltotal.toFixed(2)}<br>`
+        }
+    }
+</script>

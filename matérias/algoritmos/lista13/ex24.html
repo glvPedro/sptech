@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex24</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="ipt_inicio" placeholder="inicio do intervalo">
+    <input id="ipt_fim" placeholder="fim do intervalo">
+    <button onclick="analisar()">analisar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        div_text.innerHTML = ''
+
+        var i = 0;
+        var iniciointervalo = Number(ipt_inicio.value);
+        var fimintervalo = Number(ipt_fim.value);
+
+        var qtdnumeros = iniciointervalo - fimintervalo;
+        var numeroprimo = qtdnumeros % 3;
+
+        if (iniciointervalo > 0 && fimintervalo > iniciointervalo) {
+
+            while (i <= fimintervalo) {
+                if (i % 2 == 0) {
+                    div_text.innerHTML = `O número ${i} é divisível por 2`
+                }
+
+                else if (i % 3 == 0) {
+                    div_text.innerHTML = `O número ${i} é divisível por 3`
+                }
+
+                else if (i % 5 == 0) {
+                    div_text.innerHTML = `O número ${i} é divisível por 5`
+                }
+
+                else if (i % 7 == 0) {
+                    div_text.innerHTML = `O número ${i} é divisível por 7`
+                }
+
+                else if (i % 11 == 0) {
+                    div_text.innerHTML = `O número ${i} é divisível por 11`
+                }
+
+                else if (i % 13 == 0) {
+                    div_text.innerHTML = `O número ${i} é divisível por 13`
+                }
+
+                else {
+                    div_text.innerHTML = `O número ${i} não é divisível pelos principais números primos`
+                }
+                i++;
+            }
+            div_text.innerHTML = `O intervalo de ${iniciointervalo} a ${fimintervalo} tem ${Math.abs(qtdnumeros)} números, sendo que ${Math.abs(numeroprimo)} números são divisíveis por algum número primo`
+        }
+    }
+</script>
