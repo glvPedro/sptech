@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="sortearnota()">Sortear Nota para aluno</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function sortearnota() {
+        var sorteado = 1 + (Math.random() * 10);
+
+        div_text.innerHTML = `${sorteado.toFixed(2)}`
+    }
+</script>
+
+<!-- .innerHTML -->

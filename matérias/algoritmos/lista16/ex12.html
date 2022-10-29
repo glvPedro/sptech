@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12</title>
+</head>
+
+<body style="text-align: center;">
+    qual o seu número da sorte? <input id="ipt_sorte" placeholder="entre 0 e 100">
+    <button onclick="sortear()">valendo!</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var contador = 0;
+    function sortear() {
+        var numerosorte = Number(ipt_sorte.value);
+        var sorteado = parseInt(Math.random() * 100);
+
+        if (numerosorte >= 0 && numerosorte <= 100) {
+            div_text.innerHTML += `${sorteado}<br>`
+            contador++;
+
+            if (sorteado == numerosorte) {
+                alert(`<br> Foram necessários ${contador} sorteios`)
+            }
+        }
+        else {
+            alert('o número da sorte tem que ser entre 0 e 100')
+        }
+    }
+</script>

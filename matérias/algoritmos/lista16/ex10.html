@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="dado1()">Jogador 1, jogar dadinho</button>
+    <br><br>
+    <div id="div_dado1"></div>
+    <br><br>
+    <button onclick="dado2()">Jogador 2, jogar dadinho</button>
+    <br><br>
+    <div id="div_dado2"></div>
+    <br><br>
+    <div id="div_text"></div>
+</body>
+
+</html>
+<script>
+    var dado1_random = parseInt(1 + Math.random() * 6);
+    var dado2_random = parseInt(1 + Math.random() * 6);
+
+    function dado1() {
+        div_dado1.innerHTML = `${dado1_random}`
+    }
+
+    function dado2() {
+        div_dado2.innerHTML = `${dado2_random}<br><br>`
+
+        if (dado1_random > dado2_random) {
+            div_text.innerHTML = 'jogador 1 venceu'
+        }
+        else if (dado2_random > dado1_random) {
+            div_text.innerHTML = 'jogador 2 venceu'
+        }
+        else {
+            div_text.innerHTML = 'empate'
+        }
+    }
+</script>
+
+<!-- div_text.innerHTML = `` -->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="sortearcabalistico()">Quero um cabalístico</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function sortearcabalistico() {
+        var numerosorteado = parseInt(1 + Math.random() * 15);
+
+        if (numerosorteado == 3 || numerosorteado == 4 || numerosorteado == 7 || numerosorteado == 10 || numerosorteado == 12) {
+            div_text.innerHTML = 'Eu S2 números cabalísticos!'
+        }
+        else {
+            div_text.innerHTML = 'Ah, me dá um número bom na próxima!'
+        }
+    }
+</script>

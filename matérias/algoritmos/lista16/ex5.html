@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="jokenpo()">Jogar</button>
+    <br><br>
+    <img src="" alt="" id="img_jokenpo" style="height: 200px;">
+</body>
+
+</html>
+<script>
+    function jokenpo() {
+        var sorteado = 1 + parseInt(Math.random() * (3 + 1 - 1));
+
+        if (sorteado == 1) {
+            img_jokenpo.src = "https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg"
+        }
+
+        if (sorteado == 2) {
+            img_jokenpo.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Paper_sheet.jpg/200px-Paper_sheet.jpg"
+        }
+
+        if (sorteado == 3) {
+            img_jokenpo.src = "https://34495.cdn.simplo7.net/static/34495/sku/acessorios-para-costura-tesouras-e-alicates-tesoura-stainless-steel-scissors-6-5-ut66-17-5cm--p-1619810854179.png"
+        }
+    }
+</script>

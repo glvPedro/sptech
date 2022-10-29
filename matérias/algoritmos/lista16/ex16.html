@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex16</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="fasesdalua()">ver a lua</button>
+    <br><br>
+    <div id="div_text"></div>
+    <br><br>
+    <div id="div_img"></div>
+</body>
+
+</html>
+<script>
+    function fasesdalua() {
+        var sorteado = 1 + parseInt(Math.random() * 31);
+
+        if (sorteado >= 1 && sorteado <= 7) {
+            div_text.innerHTML = `${sorteado}<br><br>`
+            div_img.innerHTML = `<img style="height: 200px;" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png" alt="">`
+        }
+        else if (sorteado >= 8 && sorteado <= 16) {
+            div_text.innerHTML = `${sorteado}<br><br>`
+            div_img.innerHTML = `<img style="height: 200px;" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png" alt="">`
+        }
+        else if (sorteado >= 17 && sorteado <= 22) {
+            div_text.innerHTML = `${sorteado}<br><br>`
+            div_img.innerHTML = `<img style="height: 200px;" src="https://cdn.shopify.com/s/files/1/1061/1924/files/First_quarter_moon_emoji_icon_png_200x200.png" alt="">`
+        }
+        if (sorteado >= 23 && sorteado <= 31) {
+            div_text.innerHTML = `${sorteado}<br><br>`
+            div_img.innerHTML = `<img style="height: 200px;" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png" alt="">`
+        }
+    }
+</script>

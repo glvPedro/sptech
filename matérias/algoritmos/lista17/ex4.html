@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+
+<body style="text-align: center;">
+    <select name="programs" id="sel_programs">
+        <option value="">-- selecione uma opção --</option>
+        <option value="dc">DC</option>
+        <option value="marvel">MARVEL</option>
+    </select>
+    <button onclick="programacao()">Ver programação semanal na TV</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function programacao() {
+        var sorteio = parseInt(Math.random() * 2);
+
+        for (var i = 0; i < 5; i++) {
+            alert(`${i}`)
+            if (sorteio % 2 == 0) {
+                div_text.innerHTML = `Você verá um filme que gosta no ${i}º dia`
+            }
+            else {
+                div_text.innerHTML = 'É, ou lê um livro ou assiste um filme que não gosta mesmo'
+            }
+        }
+    }
+</script>

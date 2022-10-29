@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex19</title>
+</head>
+
+<body style="text-align: center;">
+    entre com o seu nome: <input id="ipt_nome" placeholder="seu 1° nome">
+    <br><br>
+    entre com o seu 1° número da sorte: <input id="ipt_numerosorte1" placeholder="entre 1 e 10">
+    <br><br>
+    entre com o seu 2° número da sorte: <input id="ipt_numerosorte2" placeholder="entre 1 e 10">
+    <br><br>
+    entre com o seu 3° número da sorte: <input id="ipt_numerosorte3" placeholder="entre 1 e 10">
+    <br><br>
+    <button onclick="sortear()">sortear</button>
+    <br><br>
+    <div id="div_text"></div>
+    <br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+<script>
+    var i1 = 0;
+    var i2 = 0;
+    var i3 = 0;
+    function sortear() {
+        var sorteado = parseInt(1 + Math.random() * 10);
+        var nome = (ipt_nome.value);
+        var numerodasorte1 = Number(ipt_numerosorte1.value);
+        var numerodasorte2 = Number(ipt_numerosorte2.value);
+        var numerodasorte3 = Number(ipt_numerosorte3.value);
+
+        if (numerodasorte1 >= 1 && numerodasorte1 <= 10) {
+            div_text.innerHTML = `${sorteado}`
+            i1++;
+            if (sorteado == numerodasorte1) {
+                div_resultado.innerHTML = `Parabéns, ${nome} o seu número da sorte: ${numerodasorte1} foi sorteado(a) após ${i1} sorteios!`
+            }
+        }
+
+        if (numerodasorte2 >= 1 && numerodasorte2 <= 10) {
+            div_text.innerHTML = `${sorteado}`
+            i2++;
+            if (sorteado == numerodasorte2) {
+                div_resultado.innerHTML = `Parabéns, ${nome} o seu número da sorte: ${numerodasorte2} foi sorteado(a) após ${i2} sorteios!`
+            }
+        }
+
+        if (numerodasorte3 >= 1 && numerodasorte3 <= 10) {
+            div_text.innerHTML = `${sorteado}`
+            i3++;
+            if (sorteado == numerodasorte3) {
+                div_resultado.innerHTML = `Parabéns, ${nome} o seu número da sorte: ${numerodasorte3} foi sorteado(a) após ${i3} sorteios!`
+            }
+        }
+        else {
+            alert('o seu número da sorte tem que ser entre 1 e 10. por favor, tente novamente')
+        }
+    }
+</script>

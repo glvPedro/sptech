@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="jogardado()">jogar dado</button>
+    <br><br>
+    <img id="img_dado" src="" alt="" height="200px">
+</body>
+
+</html>
+<script>
+    function jogardado() {
+        var sorteado = parseInt(1 + Math.random() * 6);
+
+        if (sorteado == 1) {
+            img_dado.src = "https://images.vectorhq.com/images/previews/27e/dado-1-138329.png"
+        }
+
+        if (sorteado == 2) {
+            img_dado.src = "https://png.vector.me/files/images/3/2/323094/dado_2_preview"
+        }
+
+        if (sorteado == 3) {
+            img_dado.src = "https://png.vector.me/files/images/3/2/323091/dado_3_preview"
+        }
+
+        if (sorteado == 4) {
+            img_dado.src = "https://png.vector.me/files/images/3/2/323088/dado_4_preview"
+        }
+
+        if (sorteado == 5) {
+            img_dado.src = "https://png.vector.me/files/images/3/2/323085/dado_5_preview"
+        }
+
+        if (sorteado == 6) {
+            img_dado.src = "https://png.vector.me/files/images/3/2/323082/dado_6_preview"
+        }
+    }
+</script>

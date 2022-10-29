@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="testarsorte()">ver minha sorte</button>
+    <br><br>
+    <div id="div_img"></div>
+    <br><br>
+    <div id="div_text"></div>
+</body>
+
+</html>
+<script>
+    function testarsorte() {
+        div_img.innerHTML = '';
+
+        var coracao = 0;
+        var carta = 0;
+
+        /* --------------------------------------------------------------------------------------------------------------------------- */
+
+        for (var i = 0; i < 21; i++) {
+            var numerosorteado = parseInt(Math.random() * 2);
+
+            if (numerosorteado % 2 == 0) {
+                div_img.innerHTML += `<img style="height: 100px;"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNuuGGbFtFp-E-0-xFj9aPTNvct4yzuQmJcw&usqp=CAU" alt="">`
+                carta++;
+            }
+            else {
+                div_img.innerHTML += `<img style="height: 100px;"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS19JhHezF5mLQCbBNEVYCnrRIpvdSyd-d8Gw&usqp=CAU" alt="">`
+                coracao++;
+            }
+
+            /* --------------------------------------------------------------------------------------------------------------------------- */
+
+            if (coracao > carta) {
+                div_text.innerHTML = 'Você tem mais sorte no amor'
+                break;
+            }
+            else if (carta > coracao) {
+                div_text.innerHTML = 'Você tem mais sorte no jogo'
+            }
+            else if (coracao == carta ) {
+                div_text.innerHTML = 'Você não tem sorte ):'
+                break;
+            }
+            else if (coracao || carta >= 11) {
+                break;
+            }
+        }
+    }
+</script>

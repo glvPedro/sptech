@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+
+<body style="text-align: center;">
+    quantas coca-cola vc acha q já bebeu na vida? <input id="ipt_qtdcocacola" placeholder="insíra um número">
+    <button onclick="gerarquantidade()">ver quantidade</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function gerarquantidade() {
+        div_text.innerHTML = '';
+        var qtd_cocacola = Number(ipt_qtdcocacola.value);
+
+        for (var i = 0; i < qtd_cocacola; i++) {
+            div_text.innerHTML += `<img style="height: 100px;" src="https://www.imigrantesbebidas.com.br/bebida/images/products/full/1984-refrigerante-coca-cola-lata-350ml.jpg" alt="">`
+
+        }
+    }
+</script>
+
+<!--  -->

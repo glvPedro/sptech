@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+</head>
+
+<body style="text-align: center;">
+    entre com o limite superior do contador:<input id="ipt_limiteinferior" placeholder="maior que 1">
+    <br>
+    entre com o limite inferior do contador:<input id="ipt_limitesuperior" placeholder="menor que 100">
+    <button onclick="contar()">contar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var limiteinferior = Number(ipt_limiteinferior.value);
+        var limitesuperior = Number(ipt_limitesuperior.value);
+
+        if (limiteinferior <= 1) {
+            div_text.innerHTML = 'o limite tem que ser maior que 1'
+        }
+        else if (limitesuperior >= 100) {
+            div_text.innerHTML = 'o limite tem que ser menor que 100'
+        }
+        else {
+            for (var i = limiteinferior; limiteinferior > 1 && i <= limitesuperior; i++) {
+                if (i % 3 == 0) {
+                    div_text.innerHTML += `${i}<br>`;
+                }
+            }
+        }
+    }
+</script>

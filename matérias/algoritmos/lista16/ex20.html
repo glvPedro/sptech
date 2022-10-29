@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex20</title>
+</head>
+
+<body style="text-align: center;">
+    Jogador 1: <span id="id_jogador1">0</span>
+    <br><br>
+    Jogador 2: <span id="id_jogador2">0</span>
+    <br><br>
+    Empate: <span id="id_empates">0</span>
+
+    <br><br>
+
+    <button onclick="jogar()">jogar</button>
+    <br><br>
+    <div id="div_dado1"></div>
+    <br><br>
+    <div id="div_dado2"></div>
+    <br><br>
+    <div id="div_text"></div>
+</body>
+
+</html>
+<script>
+    var jogador1 = 0;
+    var jogador2 = 0;
+    var empates = 0;
+
+    function jogar() {
+        var dado1 = parseInt(1 + Math.random() * 6);
+        var dado2 = parseInt(1 + Math.random() * 6);
+
+        div_dado1.innerHTML = `${dado1}`;
+        div_dado2.innerHTML = `${dado2}`;
+
+        /* -------------------------------------- */
+
+        if (dado1 > dado2) {
+            jogador1++;
+            id_jogador1.innerHTML = `${jogador1}`
+        }
+
+        else if (dado2 > dado1) {
+            jogador2++;
+            id_jogador2.innerHTML = `${jogador2}`
+        }
+
+        else {
+            empates++;
+            id_empates.innerHTML = `${empates}`
+        }
+
+        /* -------------------------------------- */
+
+        if (jogador1 > jogador2) {
+            div_text.innerHTML = 'o jogador 1 está vencendo'
+        }
+
+        else if (jogador2 > jogador1) {
+            div_text.innerHTML = 'o jogador 2 está vencendo'
+        }
+
+        else {
+            div_text.innerHTML = 'o jogo está empatado'
+        }
+    }
+</script>

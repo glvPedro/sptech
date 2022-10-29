@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+
+<body style="text-align: center;">
+    quantos depósitos você fez no banco? <input id="ipt_depositos" placeholder="entre com um número">
+    <br><br>
+    informe o valor de cada depósito: <input id="ipt_valor" placeholder="entre com um número">
+    <br><br>
+    <button onclick="registrobancario()">acompanhar grana</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function registrobancario() {
+        var qtd_depositos = Number(ipt_depositos.value);
+        var valordepositos = Number(ipt_valor.value);
+
+        var total = (valordepositos * qtd_depositos);
+
+        for (var i = 1; i <= qtd_depositos; i++) {
+            div_text.innerHTML += `${i} mês: ${(valordepositos * i).toFixed(2)}<br>`
+
+            if (i < 2) {
+                div_text.innerHTML += `<br>`
+            }
+
+            if (i == qtd_depositos) {
+                div_text.innerHTML += `Total guardado: R$${total.toFixed(2)} <br>`
+            }
+        }
+    }
+</script>

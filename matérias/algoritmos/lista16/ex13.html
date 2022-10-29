@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="avaliaratendente()">avaliar</button>
+    <br><br>
+    <div id="div_text"></div>
+</body>
+
+</html>
+<script>
+    function avaliaratendente() {
+        var minimo = 0;
+        var maximo = 5;
+        var sorteio = minimo + Math.random() * (maximo - minimo);
+
+        if (sorteio >= 0 && sorteio <= 0.5) {
+            div_text.innerHTML = `${sorteio.toFixed(1)} <br><br>`
+            div_text.innerHTML += `<img id="div_img" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png"
+                                  alt=""style="height: 200px;">`
+        }
+
+        else if (sorteio > 0.5 && sorteio <= 1.5) {
+            div_text.innerHTML = `${sorteio.toFixed(1)} <br><br>`
+            div_text.innerHTML += `<img id="div_img" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png"
+                                  alt=""style="height: 200px;">`
+        }
+
+        else if (sorteio > 1.5 && sorteio <= 3.5) {
+            div_text.innerHTML = `${sorteio.toFixed(1)} <br><br>`
+            div_text.innerHTML += `<img id="div_img" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png"
+                                  alt=""style="height: 200px;">`
+        }
+
+        else if (sorteio > 3.5 && sorteio <= 4.5) {
+            div_text.innerHTML = `${sorteio.toFixed(1)} <br><br>`
+            div_text.innerHTML += `<img id="div_img" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png"
+                                  alt=""style="height: 200px;">`
+        }
+
+        else {
+            div_text.innerHTML = `${sorteio.toFixed(1)} <br><br>`
+            div_text.innerHTML += `<img id="div_img" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png"
+                                  alt=""style="height: 200px;">`
+
+        }
+    }
+</script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="jogarjokenpo()">jogar</button>
+    <br><br>
+    <img id="jokenpoimg" src="https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg" alt=""
+        style="margin: 20px; height: 100px; border: 2px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Paper_sheet.jpg/200px-Paper_sheet.jpg" alt=""
+        style="margin: 20px; height: 100px;">
+    <img src="https://34495.cdn.simplo7.net/static/34495/sku/acessorios-para-costura-tesouras-e-alicates-tesoura-stainless-steel-scissors-6-5-ut66-17-5cm--p-1619810854179.png"
+        alt="" style="margin: 20px; height: 100px;">
+    <br><br>
+    <div id="div_text"></div>
+</body>
+
+</html>
+<script>
+    function jogarjokenpo() {
+        var sorteado1 = parseInt(1 + Math.random() * 3);
+        var sorteado2 = parseInt(1 + Math.random() * 3);
+
+        var jokenpo = '';
+        var jokenpo2 = '';
+
+        if (sorteado1 == 1) {
+            jokenpo = 'pedra';
+        }
+        if (sorteado1 == 2) {
+            jokenpo = 'papel';
+        }
+        if (sorteado1 == 3) {
+            jokenpo = 'tesoura';
+        }
+
+        /* ------------------------------------------------------------ */
+
+        if (sorteado2 == 1) {
+            jokenpo2 = 'pedra';
+        }
+        if (sorteado2 == 2) {
+            jokenpo2 = 'papel';
+        }
+        if (sorteado2 == 3) {
+            jokenpo2 = 'tesoura';
+        }
+
+        /* ------------------------------------------------------------ */
+
+        if (sorteado1 > sorteado2) {
+            div_text.innerHTML = `jogador1 venceu porque ${jokenpo} vence ${jokenpo2}`
+        }
+        else if (sorteado2 > sorteado1) {
+            div_text.innerHTML = `jogador1 venceu porque ${jokenpo2} vence ${jokenpo}`
+        }
+        else if (sorteado1 == sorteado2) {
+            div_text.innerHTML = 'EMPATE! Jogue novamente!'
+        }
+    }
+</script>

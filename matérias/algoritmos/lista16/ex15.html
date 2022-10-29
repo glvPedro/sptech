@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex15</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="sortear()">sortear temperatura</button>
+    <br><br>
+    <div id="div_resultado"></div>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function sortear() {
+        var numerosorteado = parseInt(-20 + Math.random() * 41);
+        div_resultado.innerHTML = `Temperatura sorteada: ${numerosorteado}`
+
+        if (numerosorteado < 1) {
+            div_mensagem.innerHTML = `Dá pra conservar qualquer alimento`
+        }
+        else if (numerosorteado >= 1 && numerosorteado <= 10) {
+            div_mensagem.innerHTML = `Conserva a maioria dos alimentos`
+        }
+        else {
+            div_mensagem.innerHTML = `Estraga a maioria dos alimentos`
+        }
+    }
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>provas</title>
+</head>
+
+<body>
+    <h1>quisque mirosmar - controle de vendas</h1>
+    <br>
+    <h2>--------------------abertura do quisque----------------------</h2>
+    entre com a quantidade de água engarrafada no estoque:<input id="ipt_engarrafada" placeholder="qtd de grrafas"><br>
+    entre com a quantidade de côco fechado no estoque<input id="ipt_cocofechado"
+        placeholder="qtd de côcos fechados"><br>
+    <button onclick="abrir()">abrir quiosque</button> <button onclick="encerrar()">encerrar turno</button><br><br><br>
+    <div id="div_text">
+    </div>
+</body>
+
+</html>
+<script>
+    function abrir() {
+        var aguaengarrafada = Number(ipt_engarrafada.value);
+        var cocofechado = Number(ipt_cocofechado.value);
+
+        var totaisvendidos = (aguaengarrafada + cocofechado);
+
+        if (aguaengarrafada < 100) {
+            div_text.innerHTML = 'Com essa quantidade de Água engarrafada não dá para abrir o quiosque'
+        }
+        else if (cocofechado < 200) {
+            div_text.innerHTML = 'Com essa quantidade de Coco fechado não dá para abrir o quiosque'
+        }
+        else {
+            if (aguaengarrafada >= 100 && aguaengarrafada <= 1000) {
+                div_text.innerHTML += 'Engarrafe mais água de coco <br>'
+            }
+            else if (cocofechado >= 200 && cocofechado <= 2000) {
+                div_text.innerHTML += 'Compre mais cocos <br>'
+            }
+            else {
+                if (aguaengarrafada >= 1) {
+                    div_text.innerHTML += `Com a venda de ${totaisvendidos} de <b>água engarrafada</b> o saldo no estoque é de ${totaisvendidos * 4}"`
+                }
+                else if (cocofechado >= 1) {
+                    div_text.innerHTML += `Com a venda de ${totaisvendidos} de <b>coco fechado</b> o saldo no estoque é de ${totaisvendidos * 4}"`
+                }
+                else if (aguaengarrafada >= 1 && cocofechado >= 1) {
+                    div_text.innerHTML += `Com a venda de ${totaisvendidos} de <b>água engarrafada e coco fechado</b> o saldo no estoque é de ${totaisvendidos * 4}"`
+                }
+            }
+        }
+    }
+
+    function encerrar() {
+        div_text.innerHTML = ''
+
+        var aguaengarrafada = Number(ipt_engarrafada.value);
+        var cocofechado = Number(ipt_cocofechado.value);
+
+        var totaisvendidos = (aguaengarrafada + cocofechado);
+
+        div_text.innerHTML = `      <b>Vendas de Água engarrafada</b> <br>
+
+                                    Saldo de produto no estoque: ${aguaengarrafada * aguaengarrafada} <br>
+
+                                    Quantidade de vendas: ${aguaengarrafada} <br>
+
+                                    Porcentagem das vendas: ${cocofechado / totaisvendidos} <br><br><br><br>
+
+                                    
+                                    <b>Vendas de Coco fechado</b> <br>
+
+                                    Saldo de produto no estoque: ${cocofechado * cocofechado} <br>
+
+                                    Quantidade de vendas: ${cocofechado} <br>
+
+                                    Porcentagem das vendas: ${cocofechado / totaisvendidos} <br>`
+    }
+</script>

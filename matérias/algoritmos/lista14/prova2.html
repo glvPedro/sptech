@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebe pouco ou muito?</title>
+</head>
+
+<body>
+
+    <input placeholder="Quantas taças" id="in_tacas"> <br>
+    <input placeholder="Preço da taça" id="in_preco"> <br>
+    Qual sua tolerância a álcool? <select id="sel_tipo">
+        <option value="fraco">Fraco pra bebida</option>
+        <option value="medio">Bebe todo final de semana</option>
+        <option value="brabo">Só fica bêbado com Querosene</option>
+    </select>
+    <br>
+    <button onclick="beber()">Tomar vinho</button>
+
+    <div id="div_resultado"></div>
+    <img id="img_bebida">
+
+</body>
+
+</html>
+<script>
+    function beber() {
+        var niveltolerancia = sel_tipo.value;
+
+        var qtd_tacas = Number(in_tacas.value);
+        var preco_taca = Number(in_preco.value);
+
+        if (qtd_tacas < 0 || qtd_tacas > 30) {
+            alert('Só é possível beber de 0 a 30 taças')
+        }
+        else if (preco_taca < 0.01) {
+            alert('Onde já se viu vinho grátis?')
+        }
+        else {
+            div_resultado.innerHTML = `Zé Buduia tomou um total de ${qtd_tacas} taças de vinho, pagando R$ ${qtd_tacas * preco_taca} por isso <br><br>`
+
+            /* ---------------------------------------------------------------------------------------------------------------------------------------- */
+
+            if (niveltolerancia == 'fraco' && (qtd_tacas >= 1 && qtd_tacas <= 2)) {
+                img_bebida.src = 'levemente.png'
+            }
+            if (niveltolerancia == 'fraco' && (qtd_tacas >= 3 && qtd_tacas <= 4)) {
+                img_bebida.src = 'visivelmente.png'
+            }
+            if (niveltolerancia == 'fraco' && qtd_tacas >= 5) {
+                img_bebida.src = ' superbebado.png'
+            }
+
+            /* ---------------------------------------------------------------------------------------------------------------------------------------- */
+
+            if (niveltolerancia == 'medio' && (qtd_tacas >= 3 && qtd_tacas <= 4)) {
+                img_bebida.src = 'levemente.png'
+            }
+            if (niveltolerancia == 'medio' && (qtd_tacas >= 5 && qtd_tacas <= 7)) {
+                img_bebida.src = 'visivelmente.png'
+            }
+            if (niveltolerancia == 'medio' && qtd_tacas >= 8) {
+                img_bebida.src = ' superbebado.png'
+            }
+
+            /* ---------------------------------------------------------------------------------------------------------------------------------------- */
+
+            if (niveltolerancia == 'brabo' && (qtd_tacas >= 10 && qtd_tacas <= 13)) {
+                img_bebida.src = 'levemente.png'
+            }
+            if (niveltolerancia == 'brabo' && (qtd_tacas >= 14 && qtd_tacas <= 19)) {
+                img_bebida.src = 'visivelmente.png'
+            }
+            if (niveltolerancia == 'brabo' && qtd_tacas >= 20) {
+                img_bebida.src = ' superbebado.png'
+            }
+        }
+    }
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+</head>
+
+<body style="text-align: center;">
+    entre com o limite superior do contador:<input id="ipt_limiteinferior" placeholder="maior que 1">
+    <br>
+    entre com o limite inferior do contador:<input id="ipt_limitesuperior" placeholder="menor que 100">
+    <br>
+    entre com o número da visibilidade:<input id="ipt_visibilidade" placeholder="entre 10 e 10">
+    <button onclick="contar()">contar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var limiteinferior = Number(ipt_limiteinferior.value);
+        var limitesuperior = Number(ipt_limitesuperior.value);
+        var visibilidade = Number(ipt_visibilidade.value);
+
+        if (limiteinferior <= 1) {
+            div_text.innerHTML = 'o limite tem que ser maior que 1'
+        }
+
+        if (limitesuperior >= 100) {
+            div_text.innerHTML = 'o limite tem que ser menor que 100'
+        }
+
+        if (visibilidade < 3 && visibilidade > 10) {
+            div_text.innerHTML = 'o limite de visibilidade tem que ser entre 3 e 10'
+        }
+
+        /* ------------------------------------------------------------------------------- */
+
+        else {
+            for (var i = limiteinferior; i <= limitesuperior; i++) {
+                if (i % visibilidade == 0) {
+                    div_text.innerHTML += `${i}<br>`;
+                }
+            }
+        }
+    }
+</script>

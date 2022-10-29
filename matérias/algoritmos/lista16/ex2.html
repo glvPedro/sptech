@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="sortear()">sortear time</button>
+    <br><br>
+    <img id="img_escudos" src="" alt="" style="height: 150px;">
+</body>
+
+</html>
+<script>
+    function sortear() {
+        var sorteado = parseInt(1 + Math.random() * 4);
+
+        if (sorteado == 1) {
+            img_escudos.src = "https://upload.wikimedia.org/wikipedia/pt/4/4b/S%C3%A3o_Paulo_Futebol_Clube.png"
+        }
+
+        if (sorteado == 2) {
+            img_escudos.src = "https://http2.mlstatic.com/D_NQ_NP_870919-MLB32524073784_102019-O.jpg"
+        }
+
+        if (sorteado == 3) {
+            img_escudos.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/640px-Santos_logo.svg.png"
+        }
+
+        if (sorteado == 4) {
+            img_escudos.src = "https://a.espncdn.com/i/teamlogos/soccer/500/2029.png"
+        }
+
+    }
+</script>

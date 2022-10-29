@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+
+<body style="text-align: center;">
+    quantas xícaras de café com leite você já tomou na vida? <input id="ipt_xicaras" placeholder="entre com um número">
+    <button onclick="exibirquantidade()">ver quantidade</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function exibirquantidade() {
+        var qtd_xicaras = Number(ipt_xicaras.value);
+
+        var colheresleite = qtd_xicaras * 1;
+        var colherescafe = qtd_xicaras * 2;
+
+        var xicara = qtd_xicaras * colheresleite * colherescafe;
+
+        for (var i = 0; i < qtd_xicaras; i++) {
+            div_text.innerHTML = ` ${colheresleite} colheres com leite em pó e ${colherescafe} colheres de café em pó.`
+            
+        }
+    }
+</script>

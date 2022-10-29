@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+
+<body style="text-align: center;">
+    <button onclick="gerarnota()">Gerar uma nota de aluno entre 0 e 10</button>
+    <br><br>
+    <div id="div_nota"></div>
+    <br><br>
+    <button onclick="gerarfrequencia()">Gerar uma frequência de aluno entre 0 e 100</button>
+    <br><br>
+    <div id="div_freq"></div>
+    <br><br>
+    <button onclick="situacaoaluno()">aprovado?</button><br><br>
+</body>
+
+</html>
+<script>
+    
+    var nota_random = parseInt(0 + Math.random() * 11);
+    var freq_random = parseInt(0 + Math.random() * 101);
+
+    function gerarnota() {
+        div_nota.innerHTML = ''
+        div_nota.innerHTML = `${nota_random.toFixed(2)}`
+    }
+
+    function gerarfrequencia() {
+        div_freq.innerHTML = ''
+        div_freq.innerHTML = `${freq_random.toFixed(2)}`
+    }
+
+    function situacaoaluno() {
+
+        if (nota_random >= 6 && freq_random >= 75) {
+            alert('aluno aprovado')
+        }
+        else {
+            alert('aluno reprovado')
+        }
+    }
+</script>
