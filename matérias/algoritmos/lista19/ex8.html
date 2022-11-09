@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+
+<body style="text-align: center;">
+    cadastre seus alunos: <input id="ipt_alunos" placeholder="joão, maria, etc">
+    <button onclick="cadastrar()">cadastrar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var alunos = [];
+    function cadastrar() {
+        div_text.innerHTML = '';
+        alunos.push(ipt_alunos.value);
+
+        for (var i = alunos.length; i > 0; i--) {
+            div_text.innerHTML += `${alunos[i - 1]}<br>`
+        }
+    }
+</script>

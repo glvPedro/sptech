@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+</head>
+
+<body style="text-align: center;">
+    cadastre seus filmes favoritos: <input id="ipt_filmes" placeholder="vingadores, etc">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <div id="div_text">
+        Seu filme favorito: <span id="filme_fav"></span>
+        <br>
+        Seu 3º filme favorito: <span id="filme_3"></span>
+        <br>
+        Total de filmes cadastrados: <span id="filme_total"></span>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var filmes = [];
+    function cadastrar() {
+        filmes.push(ipt_filmes.value);
+
+        filme_fav.innerHTML = `${filmes[0]}`;
+        filme_total.innerHTML = `${filmes.length}`;
+
+        if (filmes.length < 3) {
+            filme_3.innerHTML = 'Ainda não existe'
+        }
+        else {
+            filme_3.innerHTML = `${filmes[2]}`;
+        }
+    }
+</script>

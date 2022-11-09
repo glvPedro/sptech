@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    destino da viagem: <input id="ipt_destino" placeholder="vale da serra, etc">
+    <button onclick="adicionar()">adicionar</button>
+    <br><br>
+    <button onclick="primeiraviagem()">primeira viagem</button>
+    <button onclick="terceiraviagem()">terceira viagem</button>
+    <button onclick="ultimaviagem()">última viagem</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var viagem = [];
+    function adicionar() {
+        var destinousuario = ipt_destino.value;
+        viagem.push(destinousuario);
+    }
+    // ---------------------------------------------------------------
+
+    function primeiraviagem() {
+        if (viagem.length >= 0) {
+
+            div_text.innerHTML = viagem[0];
+        } else {
+
+            div_text.innerHTML = `Ainda não viajou`;
+        }
+    }
+
+    // ---------------------------------------------------------------
+
+    function terceiraviagem() {
+        if (viagem.length >= 0) {
+
+            div_text.innerHTML = viagem[2];
+        } else {
+
+            div_text.innerHTML = `Ainda não viajou`;
+        }
+    }
+
+    // ---------------------------------------------------------------
+
+    function ultimaviagem() {
+        if (viagem.length >= 0) {
+
+            for (var i = 0; i < viagem.length; i++) {
+                var atual = viagem[i]
+
+                div_text.innerHTML = `${atual}`;
+            }
+        } else {
+
+            div_text.innerHTML = `Ainda não viajou`;
+        }
+    }
+</script>

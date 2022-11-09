@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+
+<body style="text-align: center;">
+    cadastre seus filmes (comece pelo favorito): <input id="ipt_filmes" placeholder="vingadores, etc">
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <button onclick="visualizar()">ver filmes</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var filmes = [];
+    function cadastrar() {
+
+        filmes.push(ipt_filmes.value);
+    }
+
+    function visualizar() {
+        div_text.innerHTML = `total: ${filmes.length} <br>`
+        div_text.innerHTML += ` O que mais gosta é ${filmes[0]} <br>`
+        div_text.innerHTML += ` E desses, o que menos gosta é ${filmes[filmes.length - 1]}`
+    }
+</script>

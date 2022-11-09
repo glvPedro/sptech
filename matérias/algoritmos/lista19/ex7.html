@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+</head>
+
+<body style="text-align: center;">
+    cadastre os filmes que você mais gosta: <input id="ipt_filmes" placeholder="tropa de elite, etc">
+    <button onclick="cadastrar()">cadastrar</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var filmes = [];
+    function cadastrar() {
+        div_text.innerHTML = '';
+        filmes.push(ipt_filmes.value);
+
+        for (var i = 0; i < filmes.length; i++) {
+            const elemento = filmes[i];
+
+            if (i % 2 == 0) {
+                div_text.innerHTML += `<span style="color: blue;">${elemento} </span><br>`
+
+            }
+            else {
+                div_text.innerHTML += `<span style="color: red;">${elemento} </span><br>`
+
+            }
+        }
+    }
+</script>

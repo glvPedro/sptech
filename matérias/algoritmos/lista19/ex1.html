@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body style="text-align: center;">
+    <input id="procurarfruta" placeholder="procurar fruta">
+    <button onclick="procurar()">procurar fruta</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var fruta = ['pera', 'uva', 'maça'];
+    function procurar() {
+        var frutausuario = procurarfruta.value;
+
+        if (fruta.indexOf(frutausuario) == true) {
+            div_text.innerHTML = `A fruta ${procurarfruta.value} existe na lista`
+        }
+        else {
+            div_text.innerHTML = `Não existe a fruta ${procurarfruta.value} na lista`
+        }
+    }
+</script>

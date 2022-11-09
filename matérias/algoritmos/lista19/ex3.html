@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+
+<body style="text-align: center;">
+    bairros nos quais você já morou: <input id="ipt_bairros" placeholder="vila matilda, etc">
+    <button onclick="cadastrar()">cadastrar bairro</button>
+    <br><br>
+    relembrar uma ordem de bairro: <input id="ipt_ordem" placeholder="relembrar a 4° casa, etc">
+    <button onclick="relembrar()">relembrar moradia</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var bairros = []
+    function cadastrar() {
+        bairros.push(ipt_bairros.value);
+    }
+
+    function relembrar() {
+
+        if (bairros.length + 1 > ipt_ordem.value) {
+            div_text.innerHTML = `${bairros[ipt_ordem.value - 1]}`
+        }
+        else {
+            div_text.innerHTML = `você não morou em um ${ipt_ordem.value}° bairro!`
+        }
+    }
+</script>

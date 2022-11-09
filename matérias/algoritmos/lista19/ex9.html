@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+
+<body style="text-align: center;">
+    entre com os nomes de seus projetos já criados: <input id="ipt_projetos" placeholder="agrotec, etc">
+    <button onclick="registrar()">registrar projeto</button>
+    <button onclick="mostrar()">Mostrar Projetos</button>
+    <br><br>
+    <div id="div_text"></div>
+    <br><br>
+    <div id="div_result"></div>
+</body>
+
+</html>
+
+<script>
+    var projetos = [];
+    function registrar() {
+        projetos.push(ipt_projetos.value);
+
+        for (var i = 1; i <= projetos.length; i++) {
+            const elemento = projetos[i];
+
+            if (i < 5) {
+                div_text.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional <b>junior</b>!`
+            }
+
+            else if (i < 13) {
+                div_text.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional <b>pleno</b>!`
+            }
+
+            else {
+                div_text.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional <b>sênior</b>!`
+            }
+        }
+    }
+
+    function mostrar() {
+        for (var i = projetos.length; i > 0; i--) {
+            div_result.innerHTML += `${projetos[i - 1]}<br>`
+        }
+    }
+</script>

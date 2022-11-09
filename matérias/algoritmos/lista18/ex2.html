@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+
+    <!------------------------------------------------------------------------------------>
+
+    <input id="ipt_produto" placeholder="nome do produto">
+    <select name="select_produtos" id="slc_produtos">
+        <option value="">-- selecione uma opção --</option>
+        <option value="gerais">gerais</option>
+        <option value="alimentos">alimentos</option>
+        <option value="eletronicos">eletrônicos</option>
+    </select>
+    <input id="ipt_preco" placeholder="preço do produto">
+    <br><br>
+    <button onclick="registrar()">registrar</button>
+    <button onclick="listar()">listar</button>
+    <br><br>
+    <div id="div_text"></div>
+
+    <br><br><br><br>
+
+    <b>filtros</b>
+    <br><br>
+    <input id="ipt_filtroproduto" placeholder="filtro por produto">
+    <button onclick="filtroporproduto()">procurar</button>
+    <br><br>
+
+    <select name="select_produtos2" id="slc_produtos2">
+        <option value="">-- filtre uma categoria --</option>
+        <option value="gerais">gerais</option>
+        <option value="alimentos">alimentos</option>
+        <option value="eletronicos">eletrônicos</option>
+    </select>
+    <button onclick="filtroporcategoria()">filtrar</button>
+    <br><br>
+    <div id="div_resultado"></div>
+    <!------------------------------------------------------------------------------------>
+
+</body>
+
+</html>
+
+<script>
+    var produto = [];
+
+    var carrinho = {
+        nome: '',
+        categoria: '',
+        preco: 0
+    }
+
+    // -------------------------------------------------------------------------------- //
+
+    function registrar() {
+        div_resultado.innerHTML = '';
+        div_text.innerHTML = '';
+
+        var nomeproduto = (ipt_produto.value);
+        var precoproduto = Number(ipt_preco.value);
+        var categoria = (slc_produtos.value);
+
+        if (nomeproduto == '' || categoria == '' || precoproduto == 0) {
+            alert('Inválido! Verifique o preenchimento dos campos e categorias e tente novamente!')
+        }
+        else {
+            produto.push({ nome: nomeproduto, categoria, preco: precoproduto });
+        }
+    }
+
+    // -------------------------------------------------------------------------------- //
+
+    function listar() {
+        div_resultado.innerHTML = '';
+        div_text.innerHTML = '';
+
+        if (produto < 0) {
+            alert('Não há produtos registrados na lista!');
+        }
+        else {
+            for (i = 0; i < produto.length; i++) {
+                var objetoatual = produto[i];
+                div_text.innerHTML += `<br><br> produto: ${objetoatual.nome}<br> categoria: ${objetoatual.categoria}<br> preço: R$${objetoatual.preco}`
+            }
+        }
+    }
+
+    // -------------------------------------------------------------------------------- //
+
+    function filtroporproduto() {
+        div_resultado.innerHTML = '';
+        div_text.innerHTML = '';
+
+        if (produto.length > 0) {
+            var filtro = ipt_filtroproduto.value;
+            var produtosfiltrados = [];
+
+            for (var i = 0; i < produto.length; i++) {
+                var objetoatual = produto[i];
+                if (filtro == produto[i].nome) {
+                    produtosfiltrados.push(produto[i]);
+                }
+            }
+
+            if (produtosfiltrados.length > 0) {
+                div_resultado.innerHTML += `<br><br> produtos encontrados no filtro por: "${ipt_filtroproduto.value}" <br> produto: ${objetoatual.nome}<br> categoria: ${objetoatual.categoria}<br> preço: R$${objetoatual.preco}`
+            }
+            else {
+                div_resultado.innerHTML = 'não foi encontrado nenhum produto na lista!'
+            }
+
+        }
+        else {
+            div_resultado.innerHTML = 'não há nenhum produto registrado!'
+        }
+    }
+
+    // -------------------------------------------------------------------------------- //
+
+    function filtroporcategoria() {
+        div_resultado.innerHTML = '';
+
+        if (produto.length > 0) {
+            var filtro = slc_produtos2.value;
+            var produtosfiltrados = [];
+
+            for (var i = 0; i < produto.length; i++) {
+                var objetoatual = produto[i];
+                if (filtro == objetoatual.categoria) {
+                    produtosfiltrados.push(objetoatual);
+                    div_resultado.innerHTML += `<br><br> produto: ${objetoatual.nome}<br> categoria: ${objetoatual.categoria}<br> preço: R$${objetoatual.preco}`
+                }
+            }
+
+            if (produtosfiltrados.length == 0) {
+                div_resultado.innerHTML = 'não foi encontrado nenhum produto na lista!'
+            }
+        }
+        else {
+            div_resultado.innerHTML = 'não há nenhum produto registrado!'
+        }
+    }
+</script>
