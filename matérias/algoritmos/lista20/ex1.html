@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body style="text-align: center;">
+    entre com o preço do produto: <input id="ipt_preco" placeholder="R$***,**">
+    <button onclick="registrar()">registrar</button>
+    <button onclick="atualizar()">atualizar estoque</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var produto = [];
+
+    function registrar() {
+
+        var preco = Number(ipt_preco.value);
+
+        produto.push(preco);
+    }
+
+    function atualizar() {
+
+        var qtd_prod = produto.length;
+        var preco = 0;
+        for (var i = 0; i < qtd_prod; i++) {
+
+            preco += produto[i];
+        }
+
+        div_text.innerHTML = `Você tem ${qtd_prod} produtos cadastrados em estoque <br>
+                              Seu estoque vale R$${preco.toFixed(2)}`
+    }
+</script>

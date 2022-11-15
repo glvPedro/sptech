@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body style="text-align: center;">
+    entre com o nome de um filho seu: <input id="ipt_nome" placeholder="patrício, etc">
+    <button onclick="cadastrar()">cadastrar</button>
+    <button onclick="atualizar()">atualizar familia</button>
+    <br><br>
+    <div id="div_text">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var nomes = [];
+    function cadastrar() {
+        div_text.innerHTML = ''
+        var qtd_filhos = nomes.length;
+        var vezes = 0
+
+        for (var i = 0; i < qtd_filhos; i++) {
+            var atual = nomes[i]
+            if (atual == ipt_nome.value) {
+                vezes++
+            }
+        }
+        var resultado
+        if (vezes > 0) {
+            div_text.innerHTML = 'Não pode mais de 1 filho com o mesmo nome!'
+        } else {
+            nomes.push(ipt_nome.value);
+        }
+    }
+
+    function atualizar() {
+        div_text.innerHTML = ''
+        var qtd_filhos = nomes.length;
+
+        var custopublico = Number(qtd_filhos * 3000);
+        var custoparticular = Number(qtd_filhos * 1500);
+
+        div_text.innerHTML = `Você tem ${qtd_filhos} filhos <br>
+                              Seu custo mensal será aproximadamente R$${custoparticular.toFixed(2)} se colocar eles em escola particular
+                              ou R$${custopublico.toFixed(2)} se eles estudarem em escola pública`
+    }
+</script>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+
+<body style="text-align: center;">
+
+    <H1>BRASILEIRÃO</H1>
+    <select name="Indique-o-resultado" id="slc_resultado">
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select>
+    <button onclick="registrar()">Registrar jogo</button>
+
+    <!--------------------------------------------------------------------------------------------------------------->
+
+    <br><br>
+    o time teve: <span id="spn_vitoria"><b>0</b></span> vitórias, <span id="spn_empate"><b>0</b></span> empates,
+    <span id="spn_derrota"><b>0</b></span> derrotas
+    <br><br>
+    pontuação total: <span id="spn_total"><b>0</b></span> pontos
+    <br><br>
+    aproveitamento: <span id="spn_aproveitamento"><b>0</b></span>%
+    <br><br>
+    Indique qual jogo que saber resultado: <input id="ipt_resultado" onkeyup="visualizar()" placeholder="1, 2, etc">
+    <br><br>
+    <div id="div_text">
+
+    </div>
+
+    <!--------------------------------------------------------------------------------------------------------------->
+</body>
+
+</html>
+
+<script>
+    var resultado = [];
+    var pontos = 0;
+
+    function registrar() {
+        var vitorias = 0;
+        var empates = 0;
+        var derrotas = 0;
+        var aproveitamento = 0;
+        var contador = 0;
+
+        <!--------------------------------------------------------------------------------------------------------------->
+
+        var select = slc_resultado.value;
+
+        resultado.push(select);
+
+
+        for (var i = 0; i < resultado.length; i++) {
+
+            if (resultado[i] == 'vitoria') {
+
+                vitorias++
+            } else if (resultado[i] == 'empate') {
+
+                empates++
+            } else {
+
+                derrotas++
+            }
+            contador++
+        }
+
+        /* < !---------------------------------------------------------------------------------------------------------------> */
+
+        spn_vitoria.innerHTML = vitorias;
+        spn_empate.innerHTML = empates;
+        spn_derrota.innerHTML = derrotas;
+
+        pontos = (vitorias * 3) + empates;
+
+        spn_total.innerHTML = pontos;
+
+        aproveitamento = (pontos / (contador * 3)) * 100;
+
+        spn_aproveitamento.innerHTML = aproveitamento.toFixed(2);
+    }
+
+    /* < !---------------------------------------------------------------------------------------------------------------> */
+
+    function visualizar() {
+        var num_jogo = Number(ipt_resultado.value);
+
+        if (resultado[num_jogo - 1] == undefined) {
+            div_text.innerHTML = `Não foi cadastrado um ${num_jogo}º jogo `;
+        }
+
+        else if (resultado[num_jogo] == 'vitoria') {
+            div_text.innerHTML = ` No ${num_jogo}º jogo, o time ganhou`;
+        }
+
+        else if (resultado[num_jogo] == 'empate') {
+            div_text.innerHTML = ` No ${num_jogo}º jogo, o time empatou`;
+        }
+
+        else {
+            div_text.innerHTML = ` No ${num_jogo}º jogo, o time perdeu`;
+        }
+    }
+</script>

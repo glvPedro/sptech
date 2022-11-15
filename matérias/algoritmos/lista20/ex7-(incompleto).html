@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>análise de performance de alunos - registro</h2>
+    <br>
+    entre com o nome do aluno: <input id="ipt_nome" placeholder="pedro, etc">
+    <br><br>
+    entre com a nota do aluno: <input id="ipt_nota" placeholder="0 a 10">
+    <br><br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+    <br><br>
+    <div id="div_text"></div>
+    <br><br>
+    <h2>análise de performance de alunos - pesquisa</h2>
+    <br>
+    entre com o intervalo de notas:
+    <input id="ipt_de" placeholder="de">
+    <input id="ipt_ate" placeholder="ate">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <br><br>
+    <div id="div_result"></div>
+</body>
+
+</html>
+
+<script>
+    var lista = [];
+    function registrar() {
+        div_text.innerHTML = '';
+
+        var nome = ipt_nome.value;
+        var nota = Number(ipt_nota.value);
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        if (nome == '' || nota < 0 || nota > 10) {
+            alert(`Insira os dados corretamente`);
+        }
+
+        else {
+            lista.push({
+                nome,
+                nota
+            })
+        }
+
+        for (var i = lista.length; i > 0; i--) {
+            div_text.innerHTML += `Aluno ${i}: ${lista[i - 1].nome}<br>
+                                   Nota: ${lista[i - 1].nota}<br><br>`
+        }
+    }
+
+    /* ------------------------------------------------------------------------------------------------- */
+
+    /*     function analisar() {
+            div_text.innerHTML = '';
+        } */
+
+    function pesquisar() {
+        var iniciointervalo = Number(ipt_de.value);
+        var finalintervalo = Number(ipt_ate.value);
+        var alunos_lista = [];
+
+        var notamaior = 0;
+        var notamenor = 0;
+        var notamedia = 0;
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        if (iniciointervalo > finalintervalo) {
+            alert(`Insira um intervalo inicial menor que o número final. por favor, tente novamente!`);
+        }
+
+        else if (iniciointervalo < 0 || iniciointervalo > 10) {
+            alert(`Insira um intervalo inicial entre 0 e 10. por favor, tente novamente!`);
+        }
+
+        else if (finalintervalo < 0 || finalintervalo > 10) {
+            alert(`Insira um intervalo final entre 0 e 10. por favor, tente novamente!`);
+        }
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        else {
+            for (var i = 0; i < lista.length; i++) {
+                var posicao = lista[i];
+
+                if (posicao.nota >= iniciointervalo && posicao.nota <= finalintervalo) {
+                    alunos_lista.push(posicao);
+
+                    if (notamenor == 0) {
+                        notamenor = posicao.nota;
+                    }
+
+                    /* ------------------------------------------------------------------------------------- */
+                    else {
+
+                        if (posicao.nota > notamaior) {
+                            notamaior = posicao.nota
+                        }
+                        if (posicao.nota < notamenor) {
+                            notamenor = posicao.nota
+                        }
+                    }
+                    notamedia += posicao.nota;
+                }
+            }
+        }
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        div_result.innerHTML += `Total de alunos registrado: ${lista.length}<br><br>
+                                 Total de alunos listados: ${alunos_lista.length}<br>
+                                 Maior Nota: ${notamaior}<br>
+                                 Menor Nota: ${notamenor}<br>
+                                 Média das Notas: ${(notamedia / alunos_lista.length).toFixed(2)}`
+    }
+</script>

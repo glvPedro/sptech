@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+</head>
+
+<body style="text-align: center;">
+    entre com o nome do produto: <input id="ipt_nome" placeholder="macarrão, etc">
+    <br><br>
+    entre com o valor da compra: <input id="ipt_preco" placeholder="R$***,**">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <div id="div_text">
+    </div>
+
+    <div id="div_result">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var estoque = [];
+
+    var maiorpreco = 0;
+    var menorpreco = 0;
+
+    var produtobarato = '';
+    var produtocaro = '';
+
+    /* ------------------------------------------------------------------------------------------------------------------------ */
+
+    function cadastrar() {
+        var total = 0;
+
+        var nome = ipt_nome.value;
+        var preco = Number(ipt_preco.value);
+
+        estoque.push({
+            nome,
+            preco
+        })
+        menorpreco = estoque[1].preco;
+        div_text.innerHTML = `Total produtos: ${estoque.length}`;
+
+        /* ------------------------------------------------------------------------------------------------------------------------ */
+
+        for (var i = 0; i < estoque.length; i++) {
+
+            var produto = estoque[i];
+            div_text.innerHTML += `<br><br> Produto ${i + 1}: ${produto.nome}<br>
+                                  Preço de compra: R$${produto.preco}. 
+                                  Vender por R$${(produto.preco * 1.25).toFixed(2)}`
+
+            var produto = estoque[i];
+            total += estoque[i].preco;
+
+            div_text.innerHTML += `Produto ${i + 1}: ${produto.nome}<br>`
+            div_text.innerHTML += `Preco de compra: ${produto.preco}. Vende por: ${(produto.preco * 1.25).toFixed(2)}<br><br>`
+
+            /* ------------------------------------------------------------------------------------------------------------------------ */
+
+            if (produto.preco > maiorpreco) {
+
+                maiorpreco = produto.preco;
+                produtocaro = produto.nome;
+            }
+
+            if (produto.preco < menorpreco) {
+
+                menorpreco = produto.preco;
+                produtobarato = produto.nome;
+            }
+
+            /* ------------------------------------------------------------------------------------------------------------------------ */
+
+            div_result.innerHTML = `Produto mais caro: ${produtocaro}<br>`;
+            div_result.innerHTML += `Produto mais barato: ${produtobarato}<br>`;
+            div_result.innerHTML += `Preço Total dos produtos registrados: ${total}<br>`;
+            div_result.innerHTML += `Preço Médio dos produtos registrados: ${(total / estoque.length).toFixed(2)}`;
+        }
+    }
+</script>

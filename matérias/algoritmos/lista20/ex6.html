@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+</head>
+
+<body style="text-align: center;">
+    Digite um número qualquer: <input id="ipt_numero" placeholder="1, 7, etc">
+    <button onclick="analisar()">Analisar Histórico</button>
+    <br><br>
+    <div id="div_text"></div>
+</body>
+
+</html>
+
+<script>
+    var lista = [];
+    var maiornumero = 0;
+    var menornumero = 0;
+
+    function analisar() {
+        div_text.innerHTML = '';
+
+        var numero = Number(ipt_numero.value);
+        menornumero = numero;
+
+        lista.push(numero);
+
+        for (var i = 0; i < lista.length; i++) {
+            div_text.innerHTML += `${i + 1}º Número: ${lista[i]}<br>`
+
+            if (lista[i] > maiornumero) {
+                maiornumero = lista[i];
+            }
+
+            if (lista[i] < menornumero) {
+                menornumero = lista[i];
+            }
+        }
+        div_text.innerHTML += `Maio: ${maiornumero}<br>
+                               Menor: ${menornumero}`
+    }
+</script>
